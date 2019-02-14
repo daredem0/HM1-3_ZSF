@@ -1,0 +1,192 @@
+%%%%%Präambel%%%%%
+
+\documentclass[12pt,a4paper]{article}%Schriftgröße, Papierformat einstellen
+%\documentclass{scrbook}
+\usepackage[top=30mm,bottom=30mm]{geometry}
+\usepackage{lipsum}
+\usepackage{csquotes}
+%Pakete laden zur deutschen Rechtschreibung und für Umlaute
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} %für Windows, Linux
+%\usepackage[applemac]{inputenc} %für Mac
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cancel}
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{filecontents}
+\usepackage{tabularx}
+\usepackage{harvard}
+\usepackage{units}
+\usepackage{longtable} 
+\usepackage{chngcntr}
+\usepackage{stmaryrd}
+\usepackage{array}
+\usepackage{hhline}
+\let\harvardleftorig\harvardleft
+%\usepackage[round]{natbib}
+%\usepackage{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
+
+%Pakete laden zu mathematischen Symbolen etc.
+\usepackage{calc} 
+\usepackage{amsmath,amssymb,amsthm,amsopn}
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+%\automark[chapter]{section}
+%\ofoot{\pagemark}
+%\ifoot{Florian Leuze}
+%\chead{\headmark}
+%\setfootsepline{1pt}
+%\setheadsepline{1pt}
+%\setheadsepline[\textwidth+20pt]{0.5pt}
+
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diverg}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\spur}{spur}
+\DeclareMathOperator{\determ}{det}
+
+%Inhaltsverzeichnis mit Links erstellen
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black] {hyperref}
+
+% Umgebungen für Definitionen, Sätze, usw.
+\newtheorem{satz}{Satz}[section]
+\newtheorem{definition}[satz]{Definition}     
+\newtheorem{lemma}[satz]{Lemma}	
+\newtheorem{bem}{Bemerkung}[section]
+% Es werden Sätze, Definitionen etc innerhalb einer Section mit
+% 1.1, 1.2 etc durchnummeriert, ebenso die Gleichungen mit (1.1), (1.2) ..                  
+\numberwithin{equation}{section}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%neue Befehle definieren
+\newcommand{\R}{\mathbb{R}} %zB \R als Abkürzung für das Symbol der reellen Zahlen
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\diffp}{\partial}
+\newcommand{\laplace}{\Delta}
+
+\newcommand{\subsubsubsection}{\paragraph}
+\newcommand\citevgl
+{\def\harvardleft{(vgl.\ \global\let\harvardleft\harvardleftorig}%
+ \cite
+}
+\newcommand\citeVgl
+{\def\harvardleft{(Vgl.\ \global\let\harvardleft\harvardleftorig}%
+ \cite
+}
+
+\def\ccite#1#2{\glqq #1\grqq\cite{#2}}
+
+\newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%Makros
+%Makro Color
+%#1 Text
+\def\colBord#1{\begingroup\color{Fuchsia}{#1}\endgroup}
+\def\colRed#1{\begingroup\color{Red}{#1}\endgroup}
+\def\colGreen#1{\begingroup\color{LimeGreen}{#1}\endgroup}
+\def\colBlue#1{\begingroup\color{NavyBlue}{#1}\endgroup}
+
+\def\usGreen#1#2{\underset{\colGreen{#1}}{#2}}
+\def\usBord#1#2{\underset{\colBord{#1}}{#2}}
+
+\def\ubGreen#1#2{\underbrace{#2}_{\colGreen{#1}}}
+
+\def\defF{\textbf{Def.: }}
+\def\mDef#1{
+\begin{definition}
+  #1
+\end{definition}}
+
+\def\vecT#1{\left(\begin{array}{c} #1 \end{array}\right)}
+\def\dddot{\cdot \\ \cdot \\ \cdot}
+\def\vecD#1{\vecT{#1_1 \\ \dddot \\ #1_d}}
+\def\vecDt#1#2{\vecT{#1 \\ \dddot \\ #2}}
+\def\vecN{\mathcal{O}}
+\def\vspan#1{span \lbrace #1 \rbrace}
+\def\vdim#1{dim \lbrace #1 \rbrace}
+\def\vker#1{ker \lbrace #1 \rbrace}
+\def\vrang#1{Rang \lbrace #1 \rbrace}
+\def\mzxz#1#2#3#4{\left(\begin{array}{c c} #1 & #2 \\ #3 & #4 \\ \end{array}\right)}
+\def\mdxd#1#2#3{\left(\begin{array}{c c c} #1 \\ #2 \\ #3 \end{array}\right)}
+\def\dfp#1#2{\frac{\partial #1}{\partial #2}}
+
+\def\epsF{\pmb{\varepsilon}}
+
+\def\multiTwo#1#2{\multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}#1}{#2}}
+\def\multiThree#1#2{\multicolumn{3}{>{\hsize=\dimexpr3\hsize+4\tabcolsep+2\arrayrulewidth\relax}#1}{#2}}
+
+\def\inR#1{\qquad ,\; #1 \in \R}
+\def\inRs{\in \R}
+\def\bracks#1{\left[ #1 \right]}
+\def\abs#1{\left| #1 \right|}
+\def\brac#1{\left( #1 \right)}
+
+%laziness
+\def\fermi{Fermi-Dirac-Verteilung}
+
+\newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+
+\def\formTab#1#2{
+\begin{equation}
+  \begin{tabularx}{12cm}{R{3cm} l l}
+    #1 &: &$#2$
+  \end{tabularx}
+\end{equation}
+}
+\newcommand{\formTabL}[3]{
+\begin{equation}
+  \begin{tabularx}{12cm}{R{3cm} l l}
+    #1 &: &$#2$ 
+  \end{tabularx}
+  \label{eq:#3}
+\end{equation}}
+\def\formTn{$ \\ $\;$ & $\;$ & $}
+\def\formTnQ{$ \\ $\;$ & $\;$ & $\qquad}
+\def\formTnQQ{$ \\ $\;$ & $\;$ & $\qquad \qquad}
+\def\formTnQQQ{$ \\ $\;$ & $\;$ & $\qquad \qquad \qquad}
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}
+.\arabic{equation}}
+%Setzt den equation-Zaehler nach jeder Seite zurueck
+\numberwithin{equation}{subsection}	
+
+
+%\setlength\abovedisplayskip{0pt}
+
+% Auf der Seite http://detexify.kirelabs.org/classify.html können Sie mathematische Symbole, Pfeile usw per Maus eingeben und bekommen den Latex-Befehl dafür angezeigt.
+% detexify gibt es auch als App...
+
+%jetzt beginnt das eigentliche Dokument
+\begin{document}
+
+\bibliographystyle{agsm}
+\section*{\Huge Attention}
+\begin{LARGE}
+If you find something missing please enter the amount into the shopping list. The one with shopping duty can then use this list to buy what's needed. After shopping please make sure to cancel the old entries so that the list will be up to date always. I leaft some space in the bottom, so if you find something thats not on the list just write it there and I will enter it in the next one.
+\end{LARGE}
+
+\end{document}

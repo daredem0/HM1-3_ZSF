@@ -1,0 +1,99 @@
+\section{Laplace Operator}
+	\subsection{Laplace in karthesischen Koordinaten}
+	\begin{equation}
+		\lapl \varphi = \nabla \nabla \varphi= \sum\limits_{j=1}^d \frac{\diffp^2 \varphi}{\diffp x_j^2} = \frac{\diffp^2 \varphi}{\diffp x_1^2} + ... + \frac{\diffp^2 \varphi}{\diffp x_d^2}
+	\end{equation}
+	
+	\subsection{Laplace in Polarkoordinaten}
+	\begin{equation}
+		\lapl = \frac{1}{r} \frac{\partial}{\partial r} r \frac{\partial }{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2 }
+	\end{equation}
+
+	\subsection{Laplace in Zylinderkoordinaten}
+	\begin{equation}
+		\lapl =\frac{1}{\rho} \frac{\partial}{\partial \rho}
+\left( \rho\,\frac{\partial f}{\partial \rho} \right) +
+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \varphi^2} +
+\frac{\partial^2 f}{\partial z^2}
+	\end{equation}
+	
+	\subsection{Laplace in Kugelkoordinaten}
+	\begin{equation}
+		\lapl = \frac{1}{r^2} \frac{\partial}{\partial r}r^2 \frac{\partial}{\partial r} + \frac{1}{r^2 sin \vartheta}\frac{\partial}{\partial \vartheta} sin \vartheta \frac{\partial}{\partial \vartheta} + \frac{1}{r^2 \sin^2 \vartheta}\frac{\partial^2}{\partial \varphi^2}
+	\end{equation}
+	
+	\subsection{Laplace in Elliptischen Koordinaten}
+	\begin{equation}
+		\lapl = \frac{1}{a^2(\sinh^2 (u) \cos^2(v)+\cosh^2 (u) \sin^2(v))} \left( \frac{\partial^2}{\partial^2 u} + \frac{\partial^2}{\partial^2 v}\right)
+	\end{equation}
+		
+	\subsection{Laplace Beltrami Operator}
+	Ist $f \in C^2(V))$ dann gilt $\tilde{\lapl f} = \tilde{\lapl} \tilde{f}$ wobei
+	\begin{align}
+		\tilde{\lapl} &=  \frac{1}{\sqrt{g(u)}} \sum_{k,l}^n \frac{\partial}{\partial u_k} \sqrt{g(u)} \;\; g^{kl} \frac{\partial}{\partial u_l} \nonumber \\
+		&= \frac{1}{\sqrt{g(u)}}\sum_{k=1}^n \sum_{l=1}^n \left( \frac{\partial}{\partial u_k} \sqrt{g(u)} \;\; g^{kl} \frac{\partial}{\partial u_l} \right) \label{eq:lapl_beltr}
+	\end{align}
+	Wobei $g(u) = \det G(u)$ ist. $g_{kl}$ sind dabei die einzelnen Komponenten von $G(u)$. $g^{kl}$ sind die Komponenten der Inversen von $G(u)$. \newline
+	Weiterhin gilt 
+	\begin{equation}
+		G(u) = J_{\vec{x}}^T \cdot J_{\vec{x}}
+	\end{equation}
+	Man nennt $G(u)$ die Grahmsche Matrix. $\vec{x}$ ist hierbei die Transformationsabbildung. 
+	
+	\subsubsection{Ablauf am Beispiel der Polarkoordinaten}
+	Parametrisierung: $\vec{x} = \vecT{r \cos \varphi \\ r \sin \varphi}$
+	\begin{flalign*}
+    &\textbf{Schritt 1: } \text{Jacobi -Matrix bilden und transponieren:}&
+  \end{flalign*}
+    \vspace{-0.5cm}
+  \begin{flalign*}
+  	& J_{\vec{x}} = \left( 
+	  \begin{array}{c c}
+  	  	\cos\varphi & -r\sin \varphi \\
+  	  	\sin \varphi & r \cos \varphi	
+  	 \end{array} \right) \quad \Rightarrow \quad J_{\vec{x}}^T = \left( 
+  	 \begin{array}{c c}
+  	 	\cos \varphi & \sin \varphi \\
+  	 	-r \sin \varphi & r \cos \varphi
+  	 \end{array} \right)
+  \end{flalign*}
+    \vspace{-0.5cm}
+  \begin{flalign*}
+    &\textbf{Schritt 2: } \text{Grahmsche Matrix bestimmen}&
+  \end{flalign*}
+    \vspace{-0.5cm}
+  \begin{align*}
+    G = J_{\vec{x}}^T J{\vec{x}} = \left( 
+    \begin{array}{c c}
+    		1 & 0\\
+    		0 & r^2
+    \end{array} \right)
+  \end{align*}
+    \vspace{-0.5cm}
+  \begin{flalign*}
+    &\textbf{Schritt 3: } \text{Inverse bestimmen}&
+  \end{flalign*}
+    \vspace{-0.5cm}
+  \begin{align*}
+     G ^{-1} = \frac{1}{r^2} \left( 
+     \begin{array}{c c}
+     	r^2 & 0 \\
+     	0 & 1
+     \end{array} \right) \quad = \quad \left(
+     \begin{array}{c c}
+     	1 & 0\\
+     	0 & \frac{1}{r^2}
+     \end{array}\right)
+  \end{align*}
+    \vspace{-0.5cm}
+  \begin{flalign*}
+    &\textbf{Schritt 4: } \text{In Laplace-Beltrami Operator einsetzen}&
+  \end{flalign*}
+    \vspace{-0.5cm}
+  \begin{align*}
+     \tilde{\lapl} &= \frac{1}{r} \left( \underbrace{\left( \frac{\partial}{\partial r}r \cdot \overbrace{1}^{g^{11}} \frac{\partial}{\partial r}\right)}_{k=1,\;l=1} +
+    \underbrace{\left(\frac{\partial}{\partial r} r \cdot \overbrace{0}^{g^{12}} \cdot \frac{\partial}{\partial \varphi}\right)}_{k=1,\;l=2} +
+    \underbrace{\left(\frac{\partial}{\partial \varphi} r \cdot \overbrace{0}^{g^{21}} \cdot \frac{\partial}{\partial r}\right)}_{k=2,\;l=1} +
+    \underbrace{\left(\frac{\partial}{\partial \varphi} r \cdot \overbrace{\frac{1}{r^2}}^{g^{22}} \cdot \frac{\partial}{\partial \varphi}\right)}_{k=2,\;l=2} \right) \\
+    &= \frac{1}{r} \frac{\partial}{\partial r}r \frac{\partial}{\partial r} + \frac{1}{r}\frac{\partial}{\partial \varphi} \frac{\cancel{r}}{r^{\cancel{2}}} \frac{\partial}{\partial \varphi} =\frac{1}{r} \frac{\partial}{\partial r} r \frac{\partial }{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial \varphi^2 } 
+  \end{align*}

@@ -1,0 +1,15 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Fischer}{2014}{LinAF}
+Fischer, G.  \harvardyearleft 2014\harvardyearright , {\em Lineare Algebra}, 18
+  edn, Springer Spektrum.
+
+\harvarditem{Gauss}{2017}{HM1Vortragsubung}
+Gauss, N.  \harvardyearleft 2017\harvardyearright , `Hm1 vortragsuebung'.
+\newblock Vorlesungsuebung.
+
+\harvarditem{Schneider}{2018}{HM12}
+Schneider, P. D.~G.  \harvardyearleft 2018\harvardyearright , `Hm1-2 script'.
+\newblock Vorlesungsscript.
+
+\end{thebibliography}

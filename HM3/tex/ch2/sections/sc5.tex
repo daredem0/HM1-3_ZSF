@@ -1,0 +1,60 @@
+\section{Oberflächenintegrale}
+	\subsection{Notation}
+		\begin{definition}
+			Das vektorielle Flächenelement sei gegeben durch:
+			\begin{equation}
+				\vec{d\sigma} =  \frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v} d(u,v)
+			\end{equation}
+		\end{definition}
+		\begin{definition}
+			Das skalare Flächenelement sei gegeben durch:
+			\begin{equation}
+				d\vec{\sigma}= \left|\left| \frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v}\right| \right| d(u,v)
+			\end{equation}
+		\end{definition}
+		
+		\subsection{Allgemeines Oberflächenintegral}
+		Das Integral 
+		\begin{equation}
+			F = \int_F \;d\sigma = \int_B \left|\left| \frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v}\right| \right| d(u,v)
+		\end{equation}
+		heißt Flächeninhalt von F.
+		
+		Sei $F$ eine durch $\vec{x}(u,v)$ mit $(u,v) \in B$ parametrisierte Fläche, so ergibt sich das Oberflächenintegral der Funktion $G, \R^3 \to \R$ über $F$ zu
+		\begin{equation}
+		I = \int_F G(\vec{x})\;d\vec{\sigma} = \int_B G(\vec{x}(u,v)) \underbrace{\left|\left| \frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v}\right| \right|}_{\text{Fläche Parallelogram}} d(u,v)
+		\end{equation}
+		Wobei durch $\frac{\partial \vec{x}}{\partial u}$ und $\frac{\partial \vec{x}}{\partial v}$ die Tangentialvektoren des Paralellograms gegeben sind.
+		\subsubsection{Ablauf der Oberflächenintegration}
+		Da im Beispiel zur Koordinatentransformation (siehe \ref{subs:abl_koordinatentrans}) ein Oberflächenintegral gelöst wurde und der Ablauf entsprechend analog ist wird hier auf eine weitere Ausführung verzichtet.  \
+		
+		\subsection{Fluss durch eine Fläche}
+		Integriert man ein Vektorfeld über eine Fläche, so erhält man den Fluss des Feldes durch die Fläche. \newline
+		Zur Beschreibung definiert man für eine infinitesimale Fläche mit Einheitsvektor $\vec{n}$ den Vektor $\vec{d \sigma} = \vec{n} \; d \vec{\sigma}$. Ist das Vektorfeld $\vec{v}$ parallel zu $\vec{d \sigma}$ so erhält man den Fluss $\vec{v}$ durch die Fläche gerade durch
+		\begin{equation}
+			d \Phi = ||\vec{v}|| \;d\vec{\sigma}
+		\end{equation}
+		Im antiparallelen Fall ergibt sich gerade
+		\begin{equation}
+			d\Phi = - ||\vec{v}|| \;d\vec{\sigma}
+		\end{equation}
+		Ganz allgemein gilt
+		\begin{equation}
+			d\Phi = \vec{v} \;\vec{d \sigma} = \vec{v} \vec{n} \;d\vec{\sigma}
+		\end{equation}
+		Setzt man nun die Fläche aus infinitesimalen Flächeneinheiten zusammen erhält man 
+		\begin{equation}
+			\Phi =  \int_F \vec{v}  \;\vec{d \sigma} = \int <\vec{v}, \vec{n}> \; d\vec{\sigma} = \int_B \vec{v}\underbrace{\left(\frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v}\right)}_{= \vec{d\sigma}}\;d(u,v)
+		\end{equation}
+		
+		\begin{bem}
+			Oft wird folgende Schreibweise genutzt:
+			\begin{equation}
+				\frac{\partial \vec{x}}{\partial u} \times \frac{\partial \vec{x}}{\partial v} := \frac{\partial \vec{x}}{\partial u} \wedge \frac{\partial \vec{x}}{\partial v}
+			\end{equation}
+		\end{bem}
+		\begin{bem}
+			Wichtig ist dass durch die Wahl von $\vec{n}$ folglich auch die Orientierung der Fläche bestimmt wird. Ein Fluss durch eine Fläche lässt sich nur bei orientierten Flächen sinnvoll bestimmen, da sonst nicht klar wäre in welche Richtung der Fluss positiv oder negativ zu werten ist.
+		\end{bem}
+		
+		

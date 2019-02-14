@@ -1,0 +1,257 @@
+\section{Gewöhnliche DGL n-ter Ordnung}
+	Sei $G \subset \R^{n+1}$ und $f:G\to \R$ eine gegebene Funktion. Die Gleichung
+	\begin{equation}
+		y^{(n)} = f\left(x,y,y',...,y^{(n-1)}\right) \label{eq:dgl_gew_allg}
+	\end{equation}
+	für eine gewöhnliche Funktion $x \to y(x)$ heißt gewöhnliche DGL n-ter Ordnung.\newline
+	Eine explizite Lösung davon ist eine n-mal differenzierbare Funktion $y:I \to \R$, wobei $I$ ein Intervall ist für das gilt
+	\begin{align*}
+		(x,y(x)),y'(x),...,y^{(n-1)}(x)) \in G \\
+		y^{(n)}(x) = f(x,y(x),,...,y^{(n-1)}(x))
+	\end{align*}
+	für alle $x \in I$.\newline
+	Eine Gleichung $U(x,y) = C$ mit einer $C^1$-Funktion $U$ heißt implizite Lösung  von \eqref{eq:dgl_gew_allg}, wenn die Auflösung nach $y, x \to y(x)$ eine explizite Lösung ist. Eine Gleichung der Form
+	\begin{equation}
+		F\left(x,y,y',...,y^{(n)}\right) = 0
+	\end{equation}
+	nennt man eine implizite gewöhnliche DGL.
+	
+\section{Gewöhnliche DGL 1. Ordnung}
+	\subsection{Allgemeine Form}
+	Eine DGL der Form 
+	\begin{equation}
+		y' = a(x)y + f(x) \label{eq:dgl_ordn1_inhom}
+	\end{equation}
+	heißt linear. Sind $a,f:I\to \R$ stetig auf $I$ und ist \eqref{eq:dgl_gew_allg} homogen, dann ist mit 
+	\begin{equation}
+		y(x) = C e^{A(x)} \qquad, C \in \R
+	\end{equation}
+	mit einer beliebigen Stammfunktion $A: A' = a$ die vollständige allgemeine Lösung gegeben.  \newline
+	Zur Lösung der inhomogenen Gleichung \eqref{eq:dgl_ordn1_inhom} nutzt man den Ansatz der Variation der Konstanten. Hierbei macht man den Ansatz
+	\begin{equation}
+		y(x) = c(x) e^{A(x)}
+	\end{equation}
+	mit einer gesuchten Funktion $c(x)$. Einsetzen in \eqref{eq:dgl_gew_allg} liefert
+	\begin{align}
+		f &= y'-ay=c'e^A + c e^A A'-a c e^A = c'e^A \nonumber \\
+		&\Rightarrow c' = e^{-A}f
+	\end{align}
+	Also gilt
+	\begin{equation}
+		c(x) = c + \int_{x_0}^xe^{-A(t)}f(t) \;dt
+	\end{equation}
+	mit $x_0 \in I$ beliebig.
+	
+	\subsection{Variation der Konstanten}
+	Beim Ansatz der Variation der Konstanten untersucht man die Struktur der DGL. Erkennt man eine bekannte Struktur gilt es herauszufinden, durch welche Funktion die bekannte Struktur gestört wird. Dies soll am Beispiel der DGL
+	\begin{equation}
+		\underbrace{y' + 2xy}_{:=p} = x^e{-x^2} \qquad, y(1) = e \label{eq:varC_bsp_a}
+	\end{equation}
+	gezeigt werden. \newline
+	$p$ ist die Gleichung die entsteht, wenn man bei der bekannten DGL $y' = xe^{-x^2}$ auf der linken Seite $2xy$ addiert. Die Struktur ist also gegeben durch 
+	\begin{equation}
+		y' = xe^{-x^2} \overset{\eqref{eq:varC_bsp_c}}{=} \left(-\frac{1}{2} e^{-x^2}\right)' = xe^{-x^2}
+	\end{equation}
+	was mit
+	\begin{equation}
+		y = -\frac{1}{2}e^{-x^2} \label{eq:varC_bsp_c}
+	\end{equation}
+	leicht zu lösen ist.
+	Für die Lösung der DGL bedeutet das, dass alle Funktionen der Form
+	\begin{equation}
+		y(x) = c(x) e^{-x^2}
+	\end{equation}
+	zu betrachten sind. Wie muss nun also $c(x)$ beschaffen sein, damit $y(x)$ die Lösung von \eqref{eq:varC_bsp_a} ist?
+	\begin{align}
+		y' + 2xy \overset{!}{=} xe^{-x^2} 
+		&\Leftrightarrow c(x) (-2x)\cancel{e^{-x^2}} + c'(x)\cancel{e^{-x^2}} + 2x c(x) \cancel{e^{-x^2}} = \cancel{e^{-x^2}}\nonumber \\
+		&\Leftrightarrow \cancel{-2x c(x)} + c'(x) + \cancel{2x c(x)} = x \nonumber\\
+		&\Rightarrow c'(x) = x \Rightarrow c(x) = \frac{1}{2} x^2 + C \qquad , C \in \R \nonumber\\
+		&\Rightarrow y(x) = \frac{1}{2}x^2 e^{-x^2} + C e^{-x^2}
+	\end{align}
+	Nun kann wie in allen Ansätzen einfach das AWP gelöst werden.
+	\begin{align}
+		y(1) &\overset{!}{=} e = \frac{1}{2e} + \frac{C}{e} \Leftrightarrow C = e^2-\frac{1}{2} \nonumber \\
+		&\Rightarrow y (x) = \frac{1}{2}x^2 e^{-x^2} + \left(e^2 - \frac{1}{2} \right) e^{-x^2} = e^{-x^2}\left( e^2 + \frac{1}{2}(x^2-1)\right)
+	\end{align}
+	
+	\subsection{Superpositionsprinzip}
+	Sind $y_1,y_2$ $C^1$-Funktionen mit
+	\begin{align*}
+		y_1' -ay_1 = f_1 \\
+		y_2' - ay_2 = f_2
+	\end{align*}
+	dann ist
+	\begin{equation}
+		y = \alpha y_1 + \beta y_2
+	\end{equation}
+	eine Lösung von $y' -ay = \alpha f_1 + \beta f_2$.
+	Die allgemeine Lösung von \eqref{eq:dgl_gew_allg} ist also von der Form
+	\begin{equation}
+		y(x) = c e^{A(x)} + y_p(x) \qquad, c \in \R
+	\end{equation}
+	wobei $c e^{A(x)}$ die allgemeine Lösung der homogenen Gleichung $y' -ay = 0$ und $y_p$ eine partikuläre Lösung der inhomogenen Gleichung ist.
+	
+	\subsection{Separierbare DGL}
+	Eine gewöhnliche DGL erster Ordnung  heißt separierbar, wenn sie von der Form
+	\begin{equation}
+		y' = f(x)g(y) \label{eq:dgl_sepbar}
+	\end{equation}
+	mit stetigen Funktionen $f:I \to \R,\; g: J \to \R$ auf Intervallen $I,J \subset \R$ ist. Jede Nullstelle $y_0$ von $g$ liefert eine spezielle Lösung $y(x) = y_0$. Die übrigen Lösungen erhält man durch folgendes formale Vorgehen.
+	 \begin{flalign*}
+      &\textbf{Schritt 1: } \text{Trennung der Variablen}&
+    \end{flalign*}
+      \vspace{-0.5cm} 
+      \begin{align*}
+      	\frac{1}{g(y)}\dy = f(x) \dx
+      \end{align*}
+      \vspace{-0.5cm}
+    \begin{flalign*}
+      &\textbf{Schritt 2: } \text{Unbestimmte Integration beider Seiten}&
+    \end{flalign*}
+      \vspace{-0.5cm}
+    \begin{align*}
+      \underbrace{\int \frac{1}{g(y)}\dy}_{:= G(y)} = \underbrace{\int f(x) \dx}_{:= F(x)}
+    \end{align*}
+      \vspace{-0.5cm}
+    \begin{flalign*}
+      &\textbf{Schritt 3: } \text{Allgemeine implizite Lösung aufstellen}&
+    \end{flalign*}
+      \vspace{-0.5cm}
+    \begin{align*}
+      G(y) - F(y) = C \qquad , C \in \R
+    \end{align*}
+      \vspace{-0.5cm}
+    \begin{flalign*}
+      &\textbf{Schritt 4: } \text{Das eventuell gegebene AWP implizit lösen}&
+    \end{flalign*}
+      \vspace{-1cm}
+    \begin{align*}
+      \text{AWP:} &\text{ Gegeben durch \eqref{eq:dgl_sepbar}}  \quad, y(x_0) = y_0,\;g(y_0) \neq 0 \\
+      & \Rightarrow \int_{y_0}^y \frac{1}{g(s)} \;ds = \int_{x_0}^x f(t) \; dt
+    \end{align*}
+      \vspace{-0.5cm}
+    
+	\subsection{Autonome DGL}
+	Eine DGL der Form 
+	\begin{equation}
+		y' = g(y)
+	\end{equation}
+	heißt autonom oder x-frei. Sie ist separierbar: 
+	\begin{equation}
+		G(y) = \int \frac{1}{g(y)} \dy  = x + c
+	\end{equation}
+	Die allgemeine Lösung ist gegeben durch
+	\begin{equation}
+		y_c(x) = G^{-1}(x+c) \quad, c \in \R
+	\end{equation}
+	
+	\subsection{Substitution}
+	Substitution eignet sich häufig als Hilfsmittel, um vorher nicht oder schwer lösbare DGL in separable oder lineare Form zu bringen.
+	\begin{description}
+		\item[1) ]
+		Die homogene DGL 
+		\begin{equation}
+			y' = f\left( \frac{y}{x}\right)
+		\end{equation}
+		wird durch die Substitution
+		\begin{equation}
+			u(x) = \frac{y(x)}{x} \qquad, xu = y(x)
+		\end{equation}
+		zur separierbaren DGL
+		\begin{equation}
+			u  + xu' = f(u)
+		\end{equation}
+		\item[2) ]
+		Die DGL
+		\begin{equation}
+			y' = f(ax + by + c) \qquad , a,b,c \in \R,b\neq0
+		\end{equation}
+		wird durch die Substitution
+		\begin{equation}
+			u = ax + by + c
+		\end{equation}
+		zur separierbaren Gleichung
+		\begin{equation}
+			u' = a+bf(u)
+		\end{equation}
+		\item[3) ]
+		Die riccatische DGL
+		\begin{equation}
+			y' = a(x)y + b(x) y^\alpha \qquad, \alpha \neq 0,1
+		\end{equation}
+		wird durch die Substitution 
+		\begin{equation}
+			u(x) = y^{1-\alpha}
+		\end{equation}
+		zur lineare Gleichung
+		\begin{equation}
+			u' = (1-\alpha)a(x)u+(1-\alpha)b(x)
+		\end{equation}
+		
+	\end{description}
+	\subsection{Exakte DGL}
+	\begin{definition}
+		Eine DGL der Form
+		\begin{equation}
+			p(x,y) + q(x,y)y' = 0
+		\end{equation}
+		mit $p$ und $q$ stetig auf einem einfach zusammenhängenden Gebiet $G \subset \R^2$ heißt exakt, wenn die Koeffizientenfunktionen $p$ und $q$ stetig partiell differenzierbar sind und die Integrabilitätsbedingung
+		\begin{equation}
+			\frac{\partial }{\partial y} p(x,y)= \frac{\partial}{\partial x} q(x,y)
+		\end{equation}
+		erfüllen. Man schreibt exakte DGL auch oft in folgender Form:
+		\begin{equation}
+			p(x,y)dx + q(x,y)dy = 0
+		\end{equation} \label{def:exakte_dgl}
+	\end{definition}
+	
+	\begin{bem}
+		Einfach zusammenhängend: \newline
+		Ein Gebiet das stetig auf einen Punkt zusammenziehbar ist heißt einfach zusammenhängend. Im $ \R^2$ würde das beispielsweise bedeutet, dass das Gebiet keine Löcher haben darf.
+	\end{bem}
+	
+	\subsection{Integrierender Faktor}
+	$G$ sei ein einfach zusammenhängendes Gebiet. Gegeben sei die Form
+	\begin{equation}
+		p(x,y) + q(x,y)y' = 0 \label{eq:dgl_ex_intFakt_a}
+	\end{equation} 
+	wie sie aus Def. \ref{def:exakte_dgl} bekannt ist und sei in diesem Fall eine nicht exakte DGL. Man kann nun versuchen diese DGL in eine exakte Form zu bringen, indem man sie mit einer auf $G$ stetigen, nirgendwo verschwindenden Funktion $\mu$ multipliziert. Dann hat die Gleichung
+	\begin{equation}
+		\mu (x,y)p(x,y) + \mu (x,y) q(x,y)y' = 0
+	\end{equation}
+	die gleiche Lösungsmenge wie die ursprüngliche Gleichung \eqref{eq:dgl_ex_intFakt_a}. \newline
+	Eine solche Funktion $\mu$ nennt man integrierenden Faktor (oder eulerschen Multiplikator), wenn die entstandene DGL exakt ist. Die Bedingung für die Exaktheit der neuen Gleichung ist 
+	\begin{equation}
+		\frac{\partial}{\partial y} \mu \cdot p = \frac{\partial}{\partial x} \mu \cdot q
+	\end{equation}
+	Dies ist eine partielle DGL, von der allerdings nur eine Lösung nötig ist.\newline
+	Aus der Bedingung für den integrierenden Faktor lassen sich direkt Findungsmethoden für einfache $\mu$ herleiten.
+	Für die zwei einfachsten Fälle $\mu (x,y) = \mu (x)$ bzw. $\mu (x,y) = \mu (y)$ sei dies hier der Kürze halber gezeigt. 
+	\textbf{$\mu = \mu_1 (x)$: } 
+	\begin{align}
+			\frac{\partial}{\partial y} \mu_1 (x) \cdot p &= \mu_1 (x) \frac{\partial}{\partial y} p \nonumber \\
+			\frac{\partial}{\partial x} \mu_1 (x) q &= \mu_1 (x)' q + \mu_1 (x) \frac{\partial}{\partial x} q  \nonumber \\
+			&\Rightarrow \mu_1(x) \frac{\partial}{\partial y} p \overset{!}{=} \mu_1 (x)' q + \mu_1 (x) \frac{\partial}{\partial x}q \nonumber \\
+			&\Rightarrow \mu_1 (x) \left( \frac{\partial}{\partial y} p\right) - \frac{\partial}{\partial x} q = \mu_1 (x)' q \nonumber \\
+			&\Rightarrow \frac{\mu_1 (x)}{\mu_1 (x)'} = \frac{q}{\frac{\partial}{\partial y}p - \frac{\partial}{\partial x}q} \Leftrightarrow \frac{\mu_1 (x)'}{\mu_1 (x)} = \frac{\frac{\partial}{\partial y} p - \frac{\partial}{\partial x} q}{q} \label{eq:dgl_exakt_mu1}
+	\end{align}
+	
+	\textbf{$\mu = \mu_2 (y)$: } 
+	\begin{align}
+			\frac{\partial}{\partial y} \mu_2 (y) \cdot p &= \mu_2 (y) \frac{\partial}{\partial y} p \nonumber \\
+			\frac{\partial}{\partial x} \mu_2 (y) q &= \mu_2 (y)' q + \mu_2 (y) \frac{\partial}{\partial x} q  \nonumber \\
+			&\Rightarrow \mu_2(y) \frac{\partial}{\partial y} p \overset{!}{=} \mu_2 (y)' q + \mu_2 (y) \frac{\partial}{\partial x}q \nonumber \\
+			&\Rightarrow \mu_2 (y) \left( \frac{\partial}{\partial y} p\right) - \frac{\partial}{\partial x} q = \mu_2 (y)' q \nonumber \\
+			&\Rightarrow \frac{\mu_2 (y)}{\mu_2 (y)'} = \frac{p}{\frac{\partial}{\partial x}q - \frac{\partial}{\partial y}p} \Leftrightarrow \frac{\mu_2 (y)'}{\mu_2 (y)} = \frac{\frac{\partial}{\partial x} q - \frac{\partial}{\partial y} p}{p} \label{eq:dgl_exakt_mu2}
+	\end{align}
+	
+	Die so erarbeiteten Bedingungen \eqref{eq:dgl_exakt_mu1} und \eqref{eq:dgl_exakt_mu2} lassen sich leicht als separable DGL lößen. \newline
+	\textbf{$\mu$:}
+	\begin{align}
+		&\Rightarrow \frac{\mu (a)'}{\mu (a)} \Rightarrow \int \frac{\mu (a)'}{\mu (a)}  = \int ...  \;da \nonumber \\
+		\text{Substitution } \mu &= \mu(a) \Rightarrow d\mu = \mu (a) \;da \nonumber \\
+		&\Rightarrow \int \frac{1}{\mu} d\mu = \int ... \; da
+	\end{align}
+	
+	Wobei für  $a$ entsprechend $x$ oder $y$ einzusetzen ist.

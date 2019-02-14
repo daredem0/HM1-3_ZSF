@@ -1,0 +1,117 @@
+\babel@toc {ngerman}{}
+\contentsline {subsection}{\numberline {0.1}Versionierung}{5}{subsection.1}
+\contentsline {section}{\numberline {1}Allgemeines}{6}{section.2}
+\contentsline {subsection}{\numberline {1.1}Trigonometrie}{6}{subsection.3}
+\contentsline {subsubsection}{\numberline {1.1.1}Winkelfunktionen}{6}{subsubsection.4}
+\contentsline {paragraph}{\numberline {1.1.1.1}Wichtige Werte}{6}{paragraph.8}
+\contentsline {subsubsection}{\numberline {1.1.2}Sinussatz}{6}{subsubsection.9}
+\contentsline {subsubsection}{\numberline {1.1.3}Cosinussatz}{6}{subsubsection.11}
+\contentsline {subsubsection}{\numberline {1.1.4}Tangenssatz}{6}{subsubsection.15}
+\contentsline {subsubsection}{\numberline {1.1.5}Umwandlung}{7}{subsubsection.17}
+\contentsline {subsubsection}{\numberline {1.1.6}Additionstheoreme}{7}{subsubsection.22}
+\contentsline {subsubsection}{\numberline {1.1.7}Folgerungen aus den Additionstheoremen}{7}{subsubsection.31}
+\contentsline {section}{\numberline {2}\relax $\@@underline {\hbox {Integralberechnung}}\mathsurround \z@ $\relax }{7}{section.40}
+\contentsline {subsection}{\numberline {2.1}Unbestimmtes Integral}{7}{subsection.41}
+\contentsline {subsection}{\numberline {2.2}Bestimmtes Integral}{8}{subsection.43}
+\contentsline {subsection}{\numberline {2.3}Partielle Integration}{8}{subsection.45}
+\contentsline {subsection}{\numberline {2.4}Integration durch Substitution}{8}{subsection.47}
+\contentsline {subsubsection}{\numberline {2.4.1}Spezialfall}{8}{subsubsection.49}
+\contentsline {subsection}{\numberline {2.5}Gerade/Ungerade Funktionen}{8}{subsection.51}
+\contentsline {subsection}{\numberline {2.6}Allgemeines zur Integration}{8}{subsection.53}
+\contentsline {subsubsection}{\numberline {2.6.1}Riemann Integrierbarkeit}{8}{subsubsection.54}
+\contentsline {paragraph}{\numberline {2.6.1.1}Riemannsches Unterintegral}{8}{paragraph.55}
+\contentsline {paragraph}{\numberline {2.6.1.2}Riemannsches Oberintegral}{9}{paragraph.57}
+\contentsline {paragraph}{\numberline {2.6.1.3}Riemannsche Untersumme}{9}{paragraph.60}
+\contentsline {paragraph}{\numberline {2.6.1.4}Riemannsche Obersumme}{9}{paragraph.62}
+\contentsline {paragraph}{\numberline {2.6.1.5}Eigenschaften}{9}{paragraph.64}
+\contentsline {paragraph}{\numberline {2.6.1.6}Kriterien zur Riemann-Integrierbarkeit}{10}{paragraph.73}
+\contentsline {subsubsection}{\numberline {2.6.2}MWS der Integralrechnung}{10}{subsubsection.77}
+\contentsline {subsubsection}{\numberline {2.6.3}Hauptsatz der Differential- und Integralrechnung}{11}{subsubsection.78}
+\contentsline {paragraph}{\numberline {2.6.3.1}Folgerungen}{11}{paragraph.79}
+\contentsline {subsection}{\numberline {2.7}Partialbruchzerlegung}{11}{subsection.82}
+\contentsline {subsection}{\numberline {2.8}Uneigentliche Integrale}{12}{subsection.86}
+\contentsline {subsubsection}{\numberline {2.8.1}Typen uneigentlicher Integrale}{12}{subsubsection.91}
+\contentsline {subsection}{\numberline {2.9}Wichtige Integrale}{12}{subsection.95}
+\contentsline {subsection}{\numberline {2.10}Separierbare DGL}{13}{subsection.108}
+\contentsline {subsubsection}{\numberline {2.10.1}Wiederholung klassische DGL}{13}{subsubsection.109}
+\contentsline {subsubsection}{\numberline {2.10.2}L\IeC {\"o}sen von DGL mit Koeffizienten die von t abh\IeC {\"a}ngig sind}{14}{subsubsection.110}
+\contentsline {section}{\numberline {3}Lineare Algebra}{15}{section.113}
+\contentsline {subsection}{\numberline {3.1}Definitionen}{15}{subsection.114}
+\contentsline {subsubsection}{\numberline {3.1.1}Linearkombinationen}{15}{subsubsection.115}
+\contentsline {subsubsection}{\numberline {3.1.2}Spann und Erzeugendensystem}{15}{subsubsection.117}
+\contentsline {subsubsection}{\numberline {3.1.3}Lineare Unabh\IeC {\"a}ngigkeit}{15}{subsubsection.121}
+\contentsline {subsubsection}{\numberline {3.1.4}Basis}{15}{subsubsection.125}
+\contentsline {subsubsection}{\numberline {3.1.5}Kanonische Basis}{16}{subsubsection.128}
+\contentsline {subsection}{\numberline {3.2}Vektorr\IeC {\"a}ume}{16}{subsection.130}
+\contentsline {subsubsection}{\numberline {3.2.1}Definitionen}{16}{subsubsection.131}
+\contentsline {paragraph}{\numberline {3.2.1.1}$\mathbb {R}^d$}{16}{paragraph.132}
+\contentsline {paragraph}{\numberline {3.2.1.2}Vektoraddition}{16}{paragraph.134}
+\contentsline {paragraph}{\numberline {3.2.1.3}Skalare Multiplikation}{16}{paragraph.136}
+\contentsline {paragraph}{\numberline {3.2.1.4}Nullvektor}{16}{paragraph.138}
+\contentsline {subsubsection}{\numberline {3.2.2}Struktur}{17}{subsubsection.140}
+\contentsline {subsubsection}{\numberline {3.2.3}Untervektorraum}{17}{subsubsection.144}
+\contentsline {paragraph}{\numberline {3.2.3.1}Untervektorraumkriterien}{17}{paragraph.146}
+\contentsline {paragraph}{\numberline {3.2.3.2}Triviale UVR von V}{18}{paragraph.149}
+\contentsline {paragraph}{\numberline {3.2.3.3}Interessante Untervektorr\IeC {\"a}ume}{18}{paragraph.150}
+\contentsline {subsection}{\numberline {3.3}Erzeugendensystem, Basis, Dimension, Kern lineare Unabh\IeC {\"a}ngigkeit}{18}{subsection.151}
+\contentsline {subsubsection}{\numberline {3.3.1}Linearkombination, Spann}{18}{subsubsection.152}
+\contentsline {subsubsection}{\numberline {3.3.2}Lineare Unabh\IeC {\"a}ngigkeit}{18}{subsubsection.156}
+\contentsline {subsubsection}{\numberline {3.3.3}Dimension}{19}{subsubsection.160}
+\contentsline {subsubsection}{\numberline {3.3.4}Kern}{19}{subsubsection.163}
+\contentsline {subsubsection}{\numberline {3.3.5}Rang}{19}{subsubsection.165}
+\contentsline {subsubsection}{\numberline {3.3.6}Basis}{19}{subsubsection.167}
+\contentsline {paragraph}{\numberline {3.3.6.1}Folgerungen}{19}{paragraph.170}
+\contentsline {paragraph}{\numberline {3.3.6.2}Matrixdarstellung einer linearen Abbildung bez\IeC {\"u}glich zweier Basen}{20}{paragraph.176}
+\contentsline {subsection}{\numberline {3.4}L\IeC {\"o}sungsmengen linearer Gleichungssysteme}{20}{subsection.178}
+\contentsline {subsubsection}{\numberline {3.4.1}Zeilenvektoren}{21}{subsubsection.180}
+\contentsline {subsubsection}{\numberline {3.4.2}Gauss Algorithmus}{21}{subsubsection.182}
+\contentsline {subsubsection}{\numberline {3.4.3}Gauss-Algorithmus: Spann}{21}{subsubsection.185}
+\contentsline {subsubsection}{\numberline {3.4.4}Gauss-Algorithmus: Dimension, Rang}{21}{subsubsection.187}
+\contentsline {subsubsection}{\numberline {3.4.5}Folgerungen}{22}{subsubsection.189}
+\contentsline {subsection}{\numberline {3.5}Lineare Abbildungen und Matrizen}{22}{subsection.195}
+\contentsline {subsubsection}{\numberline {3.5.1}Das Matrizenkalk\IeC {\"u}l}{23}{subsubsection.202}
+\contentsline {subsubsection}{\numberline {3.5.2}Rechenregeln}{23}{subsubsection.206}
+\contentsline {subsubsection}{\numberline {3.5.3}Einheitsmatrix}{24}{subsubsection.212}
+\contentsline {subsubsection}{\numberline {3.5.4}Inverse Matrix}{24}{subsubsection.215}
+\contentsline {paragraph}{\numberline {3.5.4.1}Bestimmung der Inversen bei $nxn$ Matrizen}{24}{paragraph.217}
+\contentsline {paragraph}{\numberline {3.5.4.2}Inverse bei $2x2$ Matrizen}{24}{paragraph.218}
+\contentsline {subsubsection}{\numberline {3.5.5}Symmetrische Matrizen}{24}{subsubsection.220}
+\contentsline {subsubsection}{\numberline {3.5.6}Schiefsymmetrische Matrizen}{24}{subsubsection.222}
+\contentsline {subsubsection}{\numberline {3.5.7}Hermitesche Matrizen}{24}{subsubsection.226}
+\contentsline {subsubsection}{\numberline {3.5.8}Transposition}{25}{subsubsection.228}
+\contentsline {subsection}{\numberline {3.6}Determinanten}{25}{subsection.230}
+\contentsline {subsubsection}{\numberline {3.6.1}Bestimmung der Determinanten}{25}{subsubsection.233}
+\contentsline {paragraph}{\numberline {3.6.1.1}Determinante einer $2x2$ Matrix}{25}{paragraph.234}
+\contentsline {paragraph}{\numberline {3.6.1.2}Determinante einer $3x3$ Matrix}{25}{paragraph.236}
+\contentsline {paragraph}{\numberline {3.6.1.3}Determinante einer Matrix > $3x3$}{26}{paragraph.238}
+\contentsline {subsection}{\numberline {3.7}Eigenwerttheorie}{26}{subsection.240}
+\contentsline {subsubsection}{\numberline {3.7.1}Bestimmung der Eigenwerte und Eigenvektoren}{26}{subsubsection.245}
+\contentsline {subsubsection}{\numberline {3.7.2}Basis des Eigenraumes bestimmen}{27}{subsubsection.251}
+\contentsline {subsubsection}{\numberline {3.7.3}Orthonormalbasis des Eigenraumes bestimmen (Gram Schmidt)}{27}{subsubsection.254}
+\contentsline {subsubsection}{\numberline {3.7.4}Projektion}{28}{subsubsection.260}
+\contentsline {subsection}{\numberline {3.8}Differentialgleichungssysteme}{28}{subsection.263}
+\contentsline {subsection}{\numberline {3.9}Quadriken bestimmen}{28}{subsection.264}
+\contentsline {subsubsection}{\numberline {3.9.1}Methode}{28}{subsubsection.265}
+\contentsline {subsubsection}{\numberline {3.9.2}Normalformen von Quadriken im $\mathbb {R}^2$}{29}{subsubsection.266}
+\contentsline {subsubsection}{\numberline {3.9.3}Normalformen von Quadriken im $\mathbb {R}^3$}{30}{subsubsection.270}
+\contentsline {subsection}{\numberline {3.10}\IeC {\"A}quivalenzaussagen}{30}{subsection.276}
+\contentsline {section}{\numberline {4}Mehrdimensionale Analysis}{31}{section.278}
+\contentsline {subsection}{\numberline {4.1}Partielle Ableitung}{31}{subsection.279}
+\contentsline {subsubsection}{\numberline {4.1.1}Gradient und Nabla Operator}{31}{subsubsection.286}
+\contentsline {subsubsection}{\numberline {4.1.2}Jacobi Matrix}{31}{subsubsection.293}
+\contentsline {subsection}{\numberline {4.2}Richtungsableitung}{32}{subsection.296}
+\contentsline {subsection}{\numberline {4.3}Mehrdimensionale Kettenregel}{32}{subsection.305}
+\contentsline {subsection}{\numberline {4.4}Wichtige Operatoren}{32}{subsection.309}
+\contentsline {subsubsection}{\numberline {4.4.1}Divergenz}{32}{subsubsection.310}
+\contentsline {subsubsection}{\numberline {4.4.2}Laplace-Operator}{33}{subsubsection.313}
+\contentsline {subsubsection}{\numberline {4.4.3}Rotation}{33}{subsubsection.316}
+\contentsline {subsection}{\numberline {4.5}Lemma von Schwarz}{33}{subsection.319}
+\contentsline {subsection}{\numberline {4.6}Taylorscher Satz}{33}{subsection.323}
+\contentsline {subsubsection}{\numberline {4.6.1}Wiederholung eindimensionaler Taylorscher Satz}{33}{subsubsection.324}
+\contentsline {subsubsection}{\numberline {4.6.2}Mehrdimensionaler Mittelwertsatz}{33}{subsubsection.326}
+\contentsline {subsubsection}{\numberline {4.6.3}Mehrdimensionaler Taylorscher Satz}{34}{subsubsection.330}
+\contentsline {subsubsection}{\numberline {4.6.4}Wichtige 1-dim Reihen}{34}{subsubsection.341}
+\contentsline {subsection}{\numberline {4.7}Mehrdimensionale Extremwertaufgaben}{35}{subsection.346}
+\contentsline {subsubsection}{\numberline {4.7.1}Hesse Matrix}{35}{subsubsection.351}
+\contentsline {subsubsection}{\numberline {4.7.2}Untersuchung nach Extremwerten}{36}{subsubsection.361}
+\contentsline {section}{\numberline {5}Literatur}{37}{section.362}
