@@ -1,0 +1,147 @@
+\section{Logik und Beweise}
+  \subsection{Wahrheitswerte}
+  \begin{table}[!htpb]
+    \caption{Wahrheitswerte}
+    \label{wahrheitswerte}
+	  \begin{tabular}{|c|c|c|c|c|c|c|c|} \noalign{\hrule height 1.5pt}
+		  $w(A$) & $w(B)$ & $\;$ & $w(\neg A)$ & $w(A \land B)$ & $w(A\lor B)$ & $w(A \Rightarrow B$ & $w(A \Leftrightarrow B$ \\ \noalign{\hrule height 1.5pt}
+		  $1$  & $1$ & $\;$ & $0$ & $1$ & $1$ & $1$ & $1$\\ \hline
+		  $1$  & $0$ & $\;$ & $0$ & $0$ & $1$ & $0$ & $0$\\ \hline
+		  $0$  & $1$ & $\;$ & $1$ & $0$ & $1$ & $1$ & $0$\\ \hline
+		  $0$  & $0$ & $\;$ & $1$ & $0$ & $0$ & $1$ & $1$\\ \noalign{\hrule height 1.5pt}
+	  \end{tabular}
+  \end{table}
+  \begin{bem}
+    Wenn $A \Rightarrow B$ wahr ist, dann heißt $A$ hinreichend für $B$ und $B$ heißt notwendig für $A$.
+  \end{bem}
+  \subsubsection{Tautologien}
+  Tautologien sind Aussagen die immer wahr sind.
+  \begin{itemize}
+    \item $(A \Rightarrow B) \Leftrightarrow (\neg B \Rightarrow \neg A$
+    \item $(A\Rightarrow B) \Leftrightarrow \neg(\neg B \land \neg A)$
+    \item $A \lor \neg A$
+    \item $\neg(A \land \neg A)$
+    \item $\neg(A \land B) \Leftrightarrow \neg A \lor \neg B$ (De Morgansche Regel)
+    \item $\neg(A \lor B) = \neg A \land \neg B$ (De Morgansche Regel)
+    \item $(A \Rightarrow B) \land (B\Rightarrow C) \Rightarrow (A \Rightarrow C)$
+    \item $(A \land (B\lor C)) \Leftrightarrow ((A \land B) \lor (A\land C))$ (Distributivgesetz)
+    \item $(A\lor (B\land C)) \Leftrightarrow ((A \lor B) \land (A \lor C))$ (Distributivgesetz)
+  \end{itemize} 
+  
+  \subsubsection{Umformungen}
+  \begin{table}[H]
+    \caption{Umformungen}
+    \label{umformungen}
+	  \begin{tabular}{|p{4cm}|p{10cm}|} \noalign{\hrule height 1.5pt}
+      \textbf{Form der Negation} & \textbf{umgeformte Aussage} \\ \noalign{\hrule height 1.5pt}
+      $\neg(\neg A)$ & $A$ \\ \hline
+      $\neg(A \land B)$ & $(\neg A) \lor (\neg B)$ (De Morgansche Regel) \\ \hline
+      $\neg(A \lor B)$ & $(\neg A)  \land (\neg B)$ (De Morgansche Regel) \\ \hline
+      $\neg(A \Rightarrow B)$ & $A \land (\neg B)$ da $(A \Rightarrow B) \Leftrightarrow \neg A \lor \neg B$ \\ \hline
+      $\neg(A \Leftrightarrow)$ & $A  \Leftrightarrow (\neg B)$\\ \hline
+      $\neg (\forall x \in M: A(x))$ & $\exists x \in M: \neg A(x)$\\ \hline
+      $\neg (\exists x \in M: A(x))$ & $\forall x \in M: \neg A(x)$\\ \noalign{\hrule height 1.5pt}
+    \end{tabular}
+  \end{table}
+  \subsection{Vollständige Induktion}
+    \subsubsection{Vorgehen}
+    \begin{flalign*}
+      &\textbf{Schritt 1: } \text{Induktionsannahme (also was zu zeigen ist)}&
+    \end{flalign*}
+    \vspace{-0.5cm}
+    \begin{flalign*}
+      &\textbf{Schritt 2: } \text{Induktionsanfang (meistens $n=1$, ist aber frei wählbar}& \\
+    \end{flalign*}
+    \vspace{-1cm}
+    \begin{flalign*}
+      &\textbf{Schritt 3: } \text{Induktionsvorraussetzung (eher optional)}&\\
+    \end{flalign*}
+    \vspace{-1cm}
+    \begin{flalign*}
+      &\textbf{Schritt 4: } \text{Induktionsbehauptung}&\\
+      &\text{(die Behauptung, dass es für alle n gilt. Bei Summen hier in der Regel $n+1$ einfügen)}&\\
+    \end{flalign*}
+    \vspace{-1cm}
+    \begin{flalign*}
+      &\textbf{Schritt 5: } \text{Induktionsschritt (der eigentliche Beweis))}&\\
+    \end{flalign*}
+    \subsubsection{Beispiel 1}
+    \begin{flalign*}
+      &\underline{Induktionsannahme:}&\\ 
+      &\qquad \qquad z.Z.:\; \forall n \in \N: 11^n - 4^n \text{ ist ein Vielfaches von 7}& \\
+    \end{flalign*}
+    \vspace{-1.7cm}
+    \begin{flalign*}
+      &\underline{Induktionsanfang:}&\\
+      & n = 1:&\\
+      & \; &11^1 - 4^1 &\overset{!}{=} x \cdot 7 \quad , x \in \N && \; &&\\
+      &\; &11-4 &= 7 = x \cdot 7&&\; &&\\
+      &\; &x &= 1 \checkmark &&\; &&\\
+    \end{flalign*}
+    \vspace{-1.7cm}
+    \begin{flalign*}
+      &\underline{Induktionsbehauptung:}&\\
+      &\qquad \qquad 11^{n+1}-4^{n+1} = a\cdot 7  \quad , a \in \N \\
+    \end{flalign*}
+    \vspace{-1.7cm}
+    \begin{flalign*}
+    &\underline{Induktionsschluss:}&\\
+    &\;& &11^{n+1}-4^{n+1} = 11^n \cdot 11-4^n \cdot 4 && \;&&\\
+    &\;& &= 11^n (7+4)-4^n \cdot 4  && \;&&\\
+    &\;& &= 7 \cdot 11^n + 4 \cdot 11^n + 4 \cdot 4^n  && \;&&\\
+    &\;& &= \underbrace{7 \cdot 11^n}_{=(*)} + \underbrace{4(11^n - 4^n)}_{=(**)} && \;&&\\
+    \end{flalign*}
+    $(*)$ ist duch $7$ teilbar da $7$ ein Faktor ist, $(**)$ ist ebenfalls durch $7$ teilbar, da $(**)$ ein Vielfaches der Induktionsannahme ist, also gilt:
+    \begin{flalign*}
+    &\;& &7 \cdot 11^n + 4(11^n - 4^n) = b \cdot 7 \quad, b \in \R && \;&&\\
+    &\;& &\Rightarrow b = 11^n + \frac{4 \cdot x\cdot 7}{7} = 11^n + 4 \cdot x&& \;&&\\
+    \end{flalign*}
+    Somit ist $b \cdot 7$ ein Vielfaches von $7$ was zu zeigen war.
+  \subsection{Binomialkoeffizienten}
+  \begin{satz}
+    Es gibt $n! = 1 \cdot 2 \cdot 3 \cdot ...< \cdot (n-1) \cdot n$ Permutationen des n-Tupels $(1,...,n)$. 
+  \end{satz}
+  \begin{bem}
+    Bezeichnung: $n!$ heißt $n$ Fakultät.
+  \end{bem}
+  Die Verallgemeinerung der binomischen Formel ist gegeben durch:
+  \begin{equation}
+    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k \;0 b^{n-k}
+  \end{equation}
+  wobei 
+  \begin{equation}
+    \binom{n}{k} = \frac{n!}{(n-k)!k!}
+  \end{equation}
+  Binomialkoeffizient heißt und $0! = 1$ gilt.
+  \begin{align}
+    \begin{array}{c c c c c c c c c c c c}
+      \; & \; &  \; & \; & \; &  1 & \; & \; & \; & \; & \;\\
+      \; & \; &  \; & \; & 1  & \; &  1 & \; & \; & \; & \;\\
+      \; & \; &  \; & 1  & \; & 2  & \; & 1  & \; & \; & \;\\
+      \; & \; &  1  & \; & 3  & \; & 3  & \; & 1  & \; & \;\\
+      \; & 1  &  \; & 4  & \; &  6 & \; & 4  & \; & 1  & \;\\
+      1  & \; &  5  & \; & 10 & \; & 10 & \; & 5  & \; & 1 \\
+      \; & \; &  \; & \; & \; &\vdots& \; & \; & \; & \; & \;\\
+    \end{array}
+    \begin{array}{c}
+      \colBlue{(a+b)} \\
+      \colBlue{(a+b)^2} \\
+      \colBlue{(a+b)^3} \\
+      \colBlue{(a+b)^4} \\
+      \colBlue{(a+b)^5} \\
+    \end{array}
+  \end{align}
+  bzw.
+  \begin{align}
+    \begin{array}{c c c c c c c c c c c}
+      \; & \; &  \; & \; & \; &  \binom{0}{0} & \; & \; & \; & \; & \;\\
+      \; & \; &  \; & \; & \binom{1}{0}  & \; &  \binom{1}{1} & \; & \; & \; & \;\\
+      \; & \; &  \; & \binom{2}{0}  & \; & \binom{2}{1}  & \; & \binom{2}{2}  & \; & \; & \;\\
+      \; & \; &  \binom{3}{0}  & \; & \binom{3}{1}  & \; & \binom{3}{2}  & \; & \binom{3}{3}  & \; & \;\\
+      \; & \binom{4}{0}  &  \; & \binom{4}{1}  & \; &  \binom{4}{2} & \; & \binom{4}{3}  & \; & \binom{4}{4}  & \;\\
+      \binom{5}{0}  & \; &  \binom{5}{1}  & \; & \binom{5}{2} & \; & \binom{5}{3} & \; & \binom{5}{4}  & \; & \binom{5}{5} \\
+      \; & \; &  \; & \; & \; &\vdots& \; & \; & \; & \; & \;\\
+    \end{array}
+  \end{align}
+  \newpage
+  

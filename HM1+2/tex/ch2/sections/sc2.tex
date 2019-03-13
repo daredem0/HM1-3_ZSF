@@ -1,0 +1,245 @@
+\section{Lineare skalare Differentialgleichungen mit konstanten Koeffizienzen}
+  \begin{definition}
+    Lineare skalare Diff.gleichungen mit konst. Koeffizienten sind Gleichungen der bauart:
+    \begin{align*}
+      Ly(x) = a_n y^{(n)}(x)+a_{n-1}y^{(n-1)}(x)+...+a_1y'(x) + a_o y(x) = f(x)
+    \end{align*}
+  \end{definition}
+  \subsection{Ansätze}
+  \begin{itemize}
+    \item[a)] Homogene Diff.gleichung:
+    Mit $\lambda$ als einfache NST:
+    \begin{equation}
+      y(x) = e^{\displaystyle\lambda x} \label{eq:dgl_Ansatz_a}
+    \end{equation}
+    Mit $\lambda$ als $n$-fache NST:
+    \begin{equation}
+      f(x) = e^{\displaystyle\lambda x}, xe^{\displaystyle\lambda x}, ..., x^{n-1}e^{\displaystyle\lambda x} 
+    \end{equation}
+    Mit $\lambda = \alpha + \beta i$ (komplexe Nullstellen):
+    \begin{equation}
+      e^{\alpha x}cos(\beta x),\quad e^{\alpha x} sin(\beta x)
+    \end{equation}
+    \item[b)] Inhomogenität der Form $f(x) = p_k(x) e^{sx}$ mit $p_k(x)$ als ein Polynom $k$-ten Grades.
+    \begin{equation}
+      y_p(x) = R_k(x)e^{sx}x^q
+    \end{equation}
+    Mit $R_k(x) = a_kx^k+...+a_0$ und $q$ als Vielfachheit der Nullstelle $s$ (ist $s$ keine Nullstelle so ist $q = 0$ und damit $x^q = 1$).
+    \item[c)] Inhomogenität der Form $cos(kx)$ oder $sin(kx)$.
+    \begin{equation}
+      yp(x) = (a cos(kx) + b sin(kx)) x^q
+    \end{equation}
+    Beispiel Umformung:
+    \begin{align}
+      f(x) &= sin(4x)\nonumber\\
+      Mit \quad
+      (1)\;\;\; e^{i\varphi} &= cos \varphi + i sin\varphi\nonumber \\
+      und \quad
+      (2)\; e^{-i\varphi} &= cos \varphi - i sin \varphi\nonumber\\
+      folgt \;mit \;(1) + (2) \;&bzw.\; (1)-(2)\nonumber\\
+      e^{i\varphi} + e^{-i\varphi} = 2\;cos\varphi \quad &bzw. \quad e^{i\varphi}-e^{-i\varphi} = 2 \; sin\varphi\nonumber\\
+      \Rightarrow cos \varphi = \frac{1}{2} (e^{i\varphi}+e^{-i\varphi}) &\quad \Rightarrow sin \varphi = \frac{1}{2i} (e^{i\varphi}-e^{-i\varphi}),\quad \forall \varphi \in \R
+    \end{align}
+    $q$ im Ansatz gibt die Vielfachheit der NST $i \varphi$ im charackteristischen Polynom des homogenen Teils der Gleichung an.
+    \item[d)] Inhomogenität der Form $q_k(x)e^{\alpha x} cos(\beta x)$ oder $q_k(x)e^{\alpha x} sin(\beta x)$
+    \begin{equation}
+      yp(x) = R_k(x)x^qe^{\alpha x}cos(\beta x) + \tilde{R}_k(x) x^qe^{\alpha x}cos{\beta x}
+    \end{equation}
+  \end{itemize}
+  \subsection{Vorgehensweise}
+    \begin{flalign*}
+      &\textbf{Schritt 1: } \text{Ansatz wählen}&
+    \end{flalign*}
+    \begin{flalign*}
+      &\textbf{Schritt 2: } \text{Ansatz einsetzen und charackteristisches Polynom bilden}& \\
+      &\text{Beispiel:}&
+    \end{flalign*}
+    \begin{align*}
+      &y'' + 3y'+2y = 0 \\
+      &\overset{\eqref{eq:dgl_Ansatz_a}}{\Rightarrow} \left(e^{\lambda x}\right)'' + 3\left(e^{\lambda x}\right)' + 2e^{\lambda x} = 0 \\
+      \left(e^{\lambda x}\right)' &\;\;= \lambda e^{\lambda x} \Rightarrow \left(e^{\lambda x}\right)'' = \lambda^2 e^{\lambda x} \\
+      &\;\;\Rightarrow \lambda^2 + 3 \lambda + 2 = 0
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 3.1: } \text{Nullstellen des char. Polynoms suchen und in Ansatz einsetzen}&\\
+      &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+      \lambda^2 + 3 \lambda + 2 = 0 \Rightarrow \lambda_1 = -2,\quad \lambda_2 = -1
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 3.2: } \text{Gegebenenfalls komplexe NST in reale umwandeln}&\\
+      &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+      y(x) &= C_1 e^{-x+ix} + C_2 e^{-x-ix} \\
+      \Rightarrow y(x) &= \tilde{C}_1e^{-x}cosx + \tilde{C}_2 e^{-x}sinx \qquad, \tilde{C}_1, \tilde{C}_2 \in \R
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 4: } \text{Allgemeine Lösung aufstellen}&
+    \end{flalign*}
+    \begin{align*}
+      \Rightarrow y(x) = C_1 e^{-2x} + C_2 e^{-x}\quad, C_1,C_2\in \R
+    \end{align*}
+    
+    \newpage
+    \subsubsection{Anfangswertproblem}
+    Falls Anfangswerte vorhanden sind können an dieser Stelle die Konstanten Koeffizienten explizit bestimmt werden. \newline
+    \begin{flalign*}
+    &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+	    y(0) &= 1,\;y'(0) = 0\\
+	    y(t) &= C_1 e^{5t} + C_2 e^{-2t}\\
+	    &\Rightarrow y(0) = C_1 e^{5\cdot 0} + C_2 e^{-2\cdot 0} = 1\\ 
+      &\Rightarrow C_1 = 1-C_2\\
+      y'(t)& = 5 C_1 e^{5t} -2 C_2 e^{-2t} \Rightarrow y'(0) = 5C_1 - 2C_2 = 0\\
+      &\Rightarrow y'(0) = 0 = 5(1-C_2)-2C_2 \Rightarrow C_2 = \frac{5}{7}\\
+      &\Rightarrow C_1 = 1-C_2 = 1- \frac{5}{7} = \frac{2}{7}\\
+      \; \\
+      &\Rightarrow y(t) = \frac{2}{7} e^{5t}+\frac{5}{7}e^{-2t}
+    \end{align*}
+    
+    \subsubsection{Inhomogenität}
+      \begin{flalign*}
+        &\textbf{Schritt 1: } \text{Ansatz wählen}&
+      \end{flalign*}
+      \begin{flalign*}
+        &\textbf{Schritt 2: } \text{Ansatz gegebenenfalls ableiten und in homogenen Teil einsetzen}&
+      \end{flalign*}    
+      \begin{flalign*}
+        &\textbf{Schritt 3: } \text{Über Koeffizientenvergleich Vorfaktoren bestimmen}&
+      \end{flalign*}    
+      \begin{flalign*}
+        &\textbf{Schritt 4: } \text{Allgemeine Lösung bilden}&
+      \end{flalign*}    
+      \begin{equation}
+        y(x) = y_{hom}(x) + y_p(x)
+      \end{equation}
+      \begin{flalign*}
+        &\textbf{Schritt 5: } \text{Gegebenenfalls Anfangswertproblem lösen}&
+      \end{flalign*}    
+      \newpage
+    \section{Lineare skalare Differentialgleichungen mit konstanten Koeffizienzen}
+  \begin{definition}
+    Lineare skalare Diff.gleichungen mit konst. Koeffizienten sind Gleichungen der bauart:
+    \begin{align*}
+      Ly(x) = a_n y^{(n)}(x)+a_{n-1}y^{(n-1)}(x)+...+a_1y'(x) + a_o y(x) = f(x)
+    \end{align*}
+  \end{definition}
+  \subsection{Ansätze}
+  \begin{itemize}
+    \item[a)] Homogene Diff.gleichung:
+    Mit $\lambda$ als einfache NST:
+    \begin{equation}
+      y(x) = e^{\displaystyle\lambda x} \label{eq:dgl_Ansatz_a}
+    \end{equation}
+    Mit $\lambda$ als $n$-fache NST:
+    \begin{equation}
+      f(x) = e^{\displaystyle\lambda x}, xe^{\displaystyle\lambda x}, ..., x^{n-1}e^{\displaystyle\lambda x} 
+    \end{equation}
+    Mit $\lambda = \alpha + \beta i$ (komplexe Nullstellen):
+    \begin{equation}
+      e^{\alpha x}cos(\beta x),\quad e^{\alpha x} sin(\beta x)
+    \end{equation}
+    \item[b)] Inhomogenität der Form $f(x) = p_k(x) e^{sx}$ mit $p_k(x)$ als ein Polynom $k$-ten Grades.
+    \begin{equation}
+      y_p(x) = R_k(x)e^{sx}x^q
+    \end{equation}
+    Mit $R_k(x) = a_kx^k+...+a_0$ und $q$ als Vielfachheit der Nullstelle $s$ (ist $s$ keine Nullstelle so ist $q = 0$ und damit $x^q = 1$).
+    \item[c)] Inhomogenität der Form $cos(kx)$ oder $sin(kx)$.
+    \begin{equation}
+      yp(x) = (a cos(kx) + b sin(kx)) x^q
+    \end{equation}
+    Beispiel Umformung:
+    \begin{align}
+      f(x) &= sin(4x)\nonumber\\
+      Mit \quad
+      (1)\;\;\; e^{i\varphi} &= cos \varphi + i sin\varphi\nonumber \\
+      und \quad
+      (2)\; e^{-i\varphi} &= cos \varphi - i sin \varphi\nonumber\\
+      folgt \;mit \;(1) + (2) \;&bzw.\; (1)-(2)\nonumber\\
+      e^{i\varphi} + e^{-i\varphi} = 2\;cos\varphi \quad &bzw. \quad e^{i\varphi}-e^{-i\varphi} = 2 \; sin\varphi\nonumber\\
+      \Rightarrow cos \varphi = \frac{1}{2} (e^{i\varphi}+e^{-i\varphi}) &\quad \Rightarrow sin \varphi = \frac{1}{2i} (e^{i\varphi}-e^{-i\varphi}),\quad \forall \varphi \in \R
+    \end{align}
+    $q$ im Ansatz gibt die Vielfachheit der NST $i \varphi$ im charackteristischen Polynom des homogenen Teils der Gleichung an.
+    \item[d)] Inhomogenität der Form $q_k(x)e^{\alpha x} cos(\beta x)$ oder $q_k(x)e^{\alpha x} sin(\beta x)$
+    \begin{equation}
+      yp(x) = R_k(x)x^qe^{\alpha x}cos(\beta x) + \tilde{R}_k(x) x^qe^{\alpha x}cos{\beta x}
+    \end{equation}
+  \end{itemize}
+  \subsection{Vorgehensweise}
+    \begin{flalign*}
+      &\textbf{Schritt 1: } \text{Ansatz wählen}&
+    \end{flalign*}
+    \begin{flalign*}
+      &\textbf{Schritt 2: } \text{Ansatz einsetzen und charackteristisches Polynom bilden}& \\
+      &\text{Beispiel:}&
+    \end{flalign*}
+    \begin{align*}
+      &y'' + 3y'+2y = 0 \\
+      &\overset{\eqref{eq:dgl_Ansatz_a}}{\Rightarrow} \left(e^{\lambda x}\right)'' + 3\left(e^{\lambda x}\right)' + 2e^{\lambda x} = 0 \\
+      \left(e^{\lambda x}\right)' &\;\;= \lambda e^{\lambda x} \Rightarrow \left(e^{\lambda x}\right)'' = \lambda^2 e^{\lambda x} \\
+      &\;\;\Rightarrow \lambda^2 + 3 \lambda + 2 = 0
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 3.1: } \text{Nullstellen des char. Polynoms suchen und in Ansatz einsetzen}&\\
+      &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+      \lambda^2 + 3 \lambda + 2 = 0 \Rightarrow \lambda_1 = -2,\quad \lambda_2 = -1
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 3.2: } \text{Gegebenenfalls komplexe NST in reale umwandeln}&\\
+      &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+      y(x) &= C_1 e^{-x+ix} + C_2 e^{-x-ix} \\
+      \Rightarrow y(x) &= \tilde{C}_1e^{-x}cosx + \tilde{C}_2 e^{-x}sinx \qquad, \tilde{C}_1, \tilde{C}_2 \in \R
+    \end{align*}
+    \begin{flalign*}
+      &\textbf{Schritt 4: } \text{Allgemeine Lösung aufstellen}&
+    \end{flalign*}
+    \begin{align*}
+      \Rightarrow y(x) = C_1 e^{-2x} + C_2 e^{-x}\quad, C_1,C_2\in \R
+    \end{align*}
+    
+    \newpage
+    \subsubsection{Anfangswertproblem}
+    Falls Anfangswerte vorhanden sind können an dieser Stelle die Konstanten Koeffizienten explizit bestimmt werden. \newline
+    \begin{flalign*}
+    &Beispiel:&
+    \end{flalign*}
+    \begin{align*}
+	    y(0) &= 1,\;y'(0) = 0\\
+	    y(t) &= C_1 e^{5t} + C_2 e^{-2t}\\
+	    &\Rightarrow y(0) = C_1 e^{5\cdot 0} + C_2 e^{-2\cdot 0} = 1\\ 
+      &\Rightarrow C_1 = 1-C_2\\
+      y'(t)& = 5 C_1 e^{5t} -2 C_2 e^{-2t} \Rightarrow y'(0) = 5C_1 - 2C_2 = 0\\
+      &\Rightarrow y'(0) = 0 = 5(1-C_2)-2C_2 \Rightarrow C_2 = \frac{5}{7}\\
+      &\Rightarrow C_1 = 1-C_2 = 1- \frac{5}{7} = \frac{2}{7}\\
+      \; \\
+      &\Rightarrow y(t) = \frac{2}{7} e^{5t}+\frac{5}{7}e^{-2t}
+    \end{align*}
+    
+    \subsubsection{Inhomogenität}
+      \begin{flalign*}
+        &\textbf{Schritt 1: } \text{Ansatz wählen}&
+      \end{flalign*}
+      \begin{flalign*}
+        &\textbf{Schritt 2: } \text{Ansatz gegebenenfalls ableiten und in homogenen Teil einsetzen}&
+      \end{flalign*}    
+      \begin{flalign*}
+        &\textbf{Schritt 3: } \text{Über Koeffizientenvergleich Vorfaktoren bestimmen}&
+      \end{flalign*}    
+      \begin{flalign*}
+        &\textbf{Schritt 4: } \text{Allgemeine Lösung bilden}&
+      \end{flalign*}    
+      \begin{equation}
+        y(x) = y_{hom}(x) + y_p(x)
+      \end{equation}
+      \begin{flalign*}
+        &\textbf{Schritt 5: } \text{Gegebenenfalls Anfangswertproblem lösen}&
+      \end{flalign*}    
+      \newpage
+    

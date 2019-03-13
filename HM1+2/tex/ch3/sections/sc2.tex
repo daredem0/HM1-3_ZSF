@@ -1,0 +1,798 @@
+\section{Lineare Algebra}
+  \subsection{Definitionen}
+  \subsubsection{Linearkombinationen}
+  $V$ sei ein Vektorraum (im Folgenden VR), $v_1,\;...,\;v_m \in V\quad ,\;\lambda  _i \in \R$.
+  \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{1}) & $\sum\limits_{i = 1}^m \lambda_i v_i$ & \colBlue{Linearkombinationen der $v_i$.}\\
+		  \end{tabularx}
+		  \label{def:linA_lineark}
+    \end{equation}
+    \subsubsection{Spann und Erzeugendensystem}
+    \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{2}) & $span(v_1,\;...,\;v_m) = \left\lbrace \sum\limits_{i = 1}^m \lambda_i v_i \quad ,\; \lambda_i,\; v_i \in \R \right\rbrace$ & \colBlue{Spann der
+				 $v_i$.}\\
+				 $\;$ & Gilt $span(v_1,\;...,\;v_m) = V \Rightarrow \lbrace v_1,\;...,\;v_m \rbrace$ &ist ein Erzeugendensystem.\\
+		  \end{tabularx}
+		  \label{def:linA_span}
+    \end{equation}
+    \begin{bem}
+      Es gilt:
+      \begin{equation}
+        dim = span \Rightarrow EZS
+      \end{equation}
+    \end{bem}
+    \subsubsection{Lineare Unabhängigkeit}
+    \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{3}) & \multiTwo{l}{$v_1,\;...,\;v_m$ linear unabhänig, falls}\\ 
+				$\;$ & \multiTwo{l}{$\sum\limits_{i = 1}^m \lambda_i v_i = \vec{0} \Rightarrow \lambda_1 = \lambda_2 = ... = \lambda_m = 0$}\\
+				$\;$ & \multiTwo{l}{$0$ darf die einzige Lösung sein, sonst linear abhängig.}\\
+		  \end{tabularx}
+		  \label{def:linA_linearabh}
+    \end{equation}
+    \begin{bem}
+      Es gilt:
+      \begin{equation}
+        detA \neq 0 \Rightarrow \text{linear unabhängig}
+      \end{equation}
+    \end{bem}
+    \subsubsection{Basis}
+    \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{4}) & \multiTwo{l}{$B = \lbrace b_1,\;...,\;b_n \rbrace \subset V$ ist Basis von $V$, falls}\\
+				$\;$ & \colGreen{(B1)} & $b_i$ linear unabhängig, $i = 1,\; ...,\; n$\\
+				$\;$ & \colGreen{(B2)} & $B$ ist ein Erzeugendensystem.\\
+		  \end{tabularx}
+		  \label{def:linA_basis}
+    \end{equation}	
+    
+    Es gilt:
+    \begin{equation}
+      \begin{tabularx}{14.7cm}{l l l}
+      (\textbf{1}) & $dimV = |b|$ & \colBlue{(Mächtigkeit von $B$)}\\
+      (\textbf{2}) & $dimV = n$ & \colBlue{($\Rightarrow n+1$ Vektoren sind linear abhängig)}\\
+      (\textbf{3}) & \multiTwo{l}{$\forall v \in V: v = \sum\limits_{i = 1}^n \lambda_i b_i$ eindeutig darstellbar.}\\
+      $\;$ & $\Rightarrow B^v = (\lambda_1,\;...,\; \lambda_n)^T$ & \colBlue{(Koordinaten von $v$ bezüglich $B$)}\\
+      \end{tabularx}
+      \label{def:linA_allg}
+    \end{equation}
+
+  \subsubsection{Kanonische Basis}
+  \begin{equation}
+    e_1 = \vecT{1\\0\\ \dddot \\ 0,} \quad e_2 = \vecT{0\\1\\ \dddot \\ 0}, \quad ..., \quad e_d = \vecT{0\\ \dddot \\0 \\1}
+  \end{equation}
+	\subsection{Vektorräume}
+		\subsubsection{Definitionen}
+		\subsubsubsection{$\R^d$}
+		\begin{equation}
+			\R^d: v = \vecT{v_1\\v_2\\ \dddot \\v_d},\; w = \vecT{w_1\\w_2\\ \dddot \\ w_d}
+		\end{equation}	
+		\subsubsubsection{Vektoraddition}
+		\begin{equation}
+			v + w = \vecD{v} + \vecD{w} = \vecT{v_1 + w_1 \\ \dddot \\ v_d + w_d}
+		\end{equation}
+		\subsubsubsection{Skalare Multiplikation}
+		\begin{align}
+			\alpha \in \R, \; v \in \R^d \nonumber \\
+			\alpha \cdot v = \vecD{\alpha\cdot v}
+		\end{align}
+		\subsubsubsection{Nullvektor}
+		\begin{equation}
+		  \mathcal{O} = \vecT{0 \\ \dddot \\ 0}
+    \end{equation}		
+    
+    \subsubsection{Struktur}
+    Für $v,\;w,\;z \in \R^d$ gelten die folgenden Eigenschaften:
+    \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{V1}) & $v + w = w + v$ &\\
+				(\textbf{V2}) & $v+(w+z) = (v+w)+z$ &\\
+				(\textbf{V3}) & $v + 0 = 0 + v = v$ & \colBlue{(0 ist das neutrale Element)}\\
+				(\textbf{V4}) & $v+(-v) = (-v)+v = 0$ & \colBlue{(-v ist das inverse Element)}\\
+		  \end{tabularx}
+		  \label{ax:vektorraumeig_v}
+    \end{equation}	
+    \newline
+    Für $\alpha\; \beta \in \R,\; v,\;w \in \R^d$ gilt:
+    \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{S1}) & $1 \cdot v = v$ & $\qquad\colBlue{(1\in \R)}$\\
+				(\textbf{S2}) & $\alpha (\beta v) = (\alpha \beta)v$ &\\
+				(\textbf{S3}) & $(\alpha + \beta) v = \alpha \cdot v + \beta \cdot v$ &\\
+				(\textbf{S4}) & $\alpha(v + w) = \alpha \cdot v + \alpha \cdot w$ &\\
+		  \end{tabularx}
+		  \label{ax:vektorraumeig_s}
+    \end{equation}		 
+    $(V1) - (V4)$ und $(S1) - (S4)$ gelten auch für Funktionen.
+    \begin{definition}
+    Ist $V$ eine Menge für deren Elemente eine Addition und eine skalare Multiplikation erklärt ist, so heißt sie Vektorraum, falls die Eigenschaften 
+    $(V1)$ - $  (V4)$ und $(S1)$ - $(S4)$ erfüllt sind, wobei jetzt $v,\;w,\;z\in V$.
+    Je nach Skalarkörper, also $\R$ oder $\C$ sprechen wir von einem reellen oder komplexen Vektorraum. Teilmengen von Vektorräumen, die ebenfalls Vektorräume
+    sind, heißen Untervektorräume. \cite{HM12}
+    \end{definition}
+
+	  \subsubsection{Untervektorraum}
+	  $V$ sei ein Vektorraum und es gelte $U \subset V$.
+	  \begin{definition}
+	  Eigenschaften $(V1)$ - $(V4)$, $(S1)$ - $(S4)$ sind als Teilmenge von V erfüllt, aber mit $u,\;v \in U$ und $\alpha \in \R$ muss auch $u + v \in U$
+	  , $\alpha  u \in U$ gelten (Abgeschlossenheit bezüglich Vektoraddition und skalarer Multiplikation). \cite{HM12}
+	  \end{definition}
+	  \subsubsubsection{Untervektorraumkriterien}
+	  \begin{equation}
+			  \begin{tabularx}{14.7cm}{l l l}
+					(\textbf{UV0}) & $0 \in U$ &\\
+					(\textbf{UV1}) & $u,\;v \in U \Rightarrow u + v \in U$ &\\
+					(\textbf{UV2}) & $u \in U,\; \lambda \in \R \Rightarrow \lambda u \in U$ &\\
+			  \end{tabularx}
+			  \label{ax:vektorraumeig_uv}
+	   \end{equation}
+	   \newline
+	   Es gilt: $U_1,\; U_2 \;$ UVR von V
+	   \begin{equation}
+	     \begin{tabularx}{14.7cm}{l l l}
+					(\textbf{1}) & $U_1 \cap U_2 = \{v\in V: v \in U_1 \land v \in U_2 \}$ UVR von  V &\\
+					(\textbf{2}) & $U_1 \cup U_2 = \{v\in V: v \in U_1 \lor v \in U_2\}$ kein UVR von V &\\
+			  \end{tabularx}
+			  \label{ax:vektorraumeig_uv}
+	   \end{equation}
+	   \subsubsubsection{Triviale UVR von V}
+	   \begin{align*}
+		   U = \{0\}\\
+		   U = V
+	  \end{align*}
+	 
+	  \subsubsubsection{Interessante Untervektorräume}
+	  \begin{itemize}
+	    \item Die Menge der stetigen Funktionen: $\brac{\brac{\bracks{a,b},\R}}$
+	    \item Die Menge der n-mal stetig diffbaren Funktionen $\C^n \brac{\bracks{a,b} , \R}$
+	    \item Die Menge der Riemann-integrierbaren Funktionen
+	  \end{itemize}
+	  
+	  \subsection{Erzeugendensystem, Basis, Dimension, Kern lineare Unabhängigkeit}
+	  \subsubsection{Linearkombination, Spann}
+	  \begin{definition}
+	    Für $v_1,...,v_m \in V$(Vektorraum) und $\lambda_j \inRs $ heißt ein Vektor der Form 
+	    \begin{equation}
+	      v = \sum_{j = 1}^m \lambda_j v_i
+	    \end{equation}
+	    eine Linearkombination der Vektoren $v_1,...,v_m$. Die Menge aller Linearkombinationen heißt der Spann von $v_1,...,v_m$, d.h.
+	    \begin{equation}
+	      Spann(v_1,...,v_m) = \lbrace \sum_{j=1}^m \lambda_j v_j: \lambda_j \inRs \rbrace
+      \end{equation}	     
+      bzw. der von $v_1,...,v_m$ aufgespannte Raum. \cite{HM12}
+	  \end{definition}
+	  
+	  Beispiel:
+	  \begin{align*}
+	    v_1 = \vecT{1\\0\\1}, \quad v_2 = \vecT{2\\1\\1}, \quad v_3 &= \vecT{3\\1\\2}, \quad v_4 = \vecT{1\\1\\0}\\
+	    v_3 = v_1 + v_2 \quad \quad v_4 &= v_2-v_1\\
+	    \Rightarrow Spann\brac{v_1,...,v_4} &= \lbrace \lambda_1 v_1 + \lambda_2 v_2: \lambda_1, \lambda_2 \inRs \rbrace
+	  \end{align*}
+	  
+	  \subsubsection{Lineare Unabhängigkeit}
+	  \begin{definition}
+	    Die Vektoren $v_1,...,vm$ heißen linear unabhängig, falls aus 
+	    \begin{equation}
+	      \sum_{j=1}^m \lambda_j v_j = \vecN \in V
+	    \end{equation}
+	    bereits 
+	    \begin{equation}
+	      \lambda_1 = ... = \lambda_m = 0 \inRs 
+	    \end{equation}
+	    folgt.
+	  \end{definition}
+	  
+	  \subsubsection{Dimension}
+    \begin{satz}
+      Für jede $mxn$ Matrix $A$ gilt die Dimensionsformel: \newline 
+      \begin{equation}
+      dim(KernA) + RangA = n
+      \end{equation}
+    \end{satz}	 
+    
+    \subsubsection{Kern}
+    \begin{satz}
+      Die Lösungen von $Ax = 0$ bilden einen Untervektorraum des $\R^n$, der sogenannte Kern von $A$, Schreibweise $KernA$.
+    \end{satz} 
+    Der Kern beinhaltet alle Elemente die auf $0$ abgebildet werden.
+    \begin{equation}
+      Kern(A) = \lbrace v \in V |A(v) = \mathcal{O}\rbrace \leq V
+    \end{equation}
+    
+	  \subsubsection{Rang}
+	  \begin{definition}
+	    Die maximale Anzahl linearer Zeilenvektoren der Matrix $A$ heißt der Rang von $A$. 
+   \end{definition} 
+	  
+	  \subsubsection{Basis}
+	  \begin{definition}
+	    $B = \lbrace v_1,...,v_M\rbrace \subset V$ heißt eine Basis von $V$, falls $B$ linear unabhängig und $V = spann \lbrace v_1,...,v_m \rbrace$ ist.
+	  \end{definition}
+	 
+    \begin{satz}
+      \glqq (Basen von endlich-dimensionalen Vektorräumen sind gleich groß).\newline
+      Sei $V$ ein Vektorraum mit Basis $\lbrace v_1,...,v_m\rbrace$. Dann sind je $n$ Vektoren $w_1,...,w_n$ aus $V$ mit $n>m$ linear abhängig. \grqq \cite{HM12}
+    \end{satz}
+     
+     \subsubsubsection{Folgerungen}
+     \begin{definition}
+		  \glqq Ist $\lbrace v_1,...,v_m \rbrace$ eine Basis des Vektorraums $V$, so lässt sich jeder Vektor $v \in V$ eindeutig als Linearkombination der $\lbrace               
+		    v_1,...,v_m$ schreiben, d.h.:
+		    \begin{equation}
+		      \exists x_k \text{ mit } v = \sum_{k=1}^m x_k v_k
+		    \end{equation}
+		    \grqq \cite{HM12}\newline
+		    Mit $x_k$ und $v_k$ als Koordinaten bezüglich dieser Basis.
+	    \end{definition}
+	    
+	    \begin{definition}
+		    \glqq Die Anzahl der Elemente einer Basis von $V$ ist unabhängig von der speziellen Wahl der Basis. Die Anzahll der Elemente der Basis heißt die Dimension des Vektorraumes $V$.\grqq \cite{HM12} Schreibweise:
+		    \begin{equation}
+		      dim V = m
+		    \end{equation}
+		   \end{definition}
+		   
+		   \begin{definition}
+		     \glqq Besitzt $V$ eine Basis mit endlich vielen Elementen, so heißt $V$ edlich dimensional, sonst heißt $V$ unendlich dimensional. \grqq \cite{HM12}
+		   \end{definition}
+		   
+		   \subsubsubsection{Matrixdarstellung einer linearen Abbildung bezüglich zweier Basen}
+		   Gegeben sei der Vektorraum $\R^2$ mit der Basis $C = {c_1, c_2}$ mit $c_1 = (1,1)^T$ und $c_2 = (0,-2)^T$, sowie der Vektorraum $\R^3$ mit der Basis $B$. Die lineare Abbildung $L: \colBlue{\R^3} \rightarrow \colGreen{\R^2}$ sei gegeben durch
+		   \begin{align*}
+		     L\left(\begin{array}{c} x_1 \\ x_2 \\ x_3  \end{array}\right) 
+		     = \left(\begin{array}{c} 2x_1+x_2 \\ x_2 - x_3  \end{array} \right)
+		   \end{align*}
+		   Bestimmen Sie die Matrixdarstellung von $L$ bezüglich der Basen $\colBlue{B}$ und $\colGreen{C}$.
+		   \begin{align*}
+		     &\textbf{Matrixdarstellung } m_L^{\colGreen{C},\colBlue{B}} &\nonumber \\
+		     &\textbf{1. Schritt:} \text{ Bilde die Basisvektoren von $B$ mit der linearen Abb. $L$ ab:}&
+		   \end{align*}
+		   \begin{align}
+		     L\vecT{1\\0\\-1} = \vecT{2\\1} \nonumber \\
+		     L\vecT{0\\2\\0} = \vecT{2\\2} \nonumber \\
+		     L\vecT{0\\1\\1} = \vecT{1\\0} \nonumber 
+		  \end{align}
+		  \begin{align*}
+		     &\textbf{2. Schritt: } \text{Stelle die Bildvektoren als LInearkombination der Basiselemente von $C$ dar:}& \nonumber 
+		  \end{align*}
+		  \begin{align}
+		     \vecT{2\\1} = \colGreen{2}\vecT{1\\1} + \colGreen{\frac{1}{2}} \vecT{0\\-2} \nonumber\\
+		     \vecT{2\\2} = \colGreen{2}\vecT{1\\1} + \colGreen{0} \vecT{0\\-2} \nonumber\\
+		     \vecT{1\\0} = \colGreen{1}\vecT{1\\1} + \colGreen{\frac{1}{2}} \vecT{0\\-2} \nonumber
+		  \end{align}
+	    \begin{align*}
+		     &\textbf{3. Schritt: } \text{Eintragen der Koeffizienten in eine Matrix:}& \nonumber 
+		  \end{align*}
+      \begin{align}
+        m_L^{C,B} = \left(\begin{array}{c c c} 2 & 2 & 1 \\ \frac{1}{2} & 0 & \frac{1}{2} \end{array}\right)
+      \end{align}        		   
+		   
+	    \subsection{Lösungsmengen linearer Gleichungssysteme}
+	    \begin{align}
+		    \left(
+	      \begin{array}{c c c c c c c}
+	      a_{11}x_1 & + &  ...   & + & a_{1n}x_n & =  & b_1\\
+	      .         & \;& \;     & \;& .         & \; & . \\
+	      .         & \;& \;     & \;& .         & \; & . \\
+	      .         & \;& \;     & \;& .         & \; & . \\
+	      a_{m1}x_1 & + & ...    & + & a_{mn}x_n & =  & b_m\\
+	      \end{array}
+	    \right) \rightarrow Ax = b   
+	   \end{align} 
+	   
+	   \subsubsection{Zeilenvektoren}
+	   Die Koeffizienten der Zeilen nennt man Zeilenvektoren.
+	   \begin{equation}
+	     v_1 = \vecDt{a_{11}}{a_{1n}}, \quad ..., \quad v_m = \vecDt{a_{m1}}{a_{mn}}
+	   \end{equation}
+	   
+	   \subsubsection{Gauss Algorithmus}
+	   Beim Gauss-Algorithmus werden Linearkombinationen der Zeilenvektoren gebildet. Das LGS hat nach der Anwendung folgende Form:
+	   
+	   \begin{align}
+	     \begin{array}{c c c c c c c c c c l}
+	       \tilde{a}_{11} x_1 & +   & ...                & + & \tilde{a}_{1r} x_r & + & ...                & + & \tilde{a}_{1n} x_n   & = & \tilde{b}_1\\
+	       0                  & +   & \tilde{a}_{22} x_1 & + & ...                & + & \tilde{a}_{2r} x_r & + & ...                  & = & \tilde{b}_1\\
+	       \;                 & .   & \;                 &\; & \;                 &\; & \;                 &\; & \;                   &\; & \;         \\
+	       \;                 &\; . & \;                 &\; & \;                 &\; & \;                 &\; & \;                   &\; & \;         \\
+	       \;                 &\;   & .                  &\; & \;                 &\; & \;                 &\; & \;                   &\; & \;         \\
+	       \;                 &\;   & \;.                &\; & \;                 &\; & \;                 &\; & \;                   &\; & \;         \\
+	       \;                 &\;   & \;                 &\, & \tilde{a}_{rr} x_r & + & ...                & + & \tilde{a}_{rn} xn    & = & \tilde{b}_r\\
+	       \;                 &\;   & \;                 &\; & \;                 &\; & \;                 &\; & 0                    & = & \tilde{b}_r + 1\\ 
+	       \;                 &\;   & \;                 &\; & \;                 &\; & \;                 &\; & 0                    & = & \tilde{b}_n\\
+	     \end{array}
+	   \end{align}
+	   Die neuen Zeilenvektoren nach dem Gauss-Algorithmus sind:
+	   \begin{equation}
+	     \tilde{v_1} = \vecDt{\tilde{a}_{11}}{\tilde{a}_{1n}}, \quad ..., \quad \tilde{v_m} = \vecDt{\tilde{a}_{m1}}{\tilde{a}_{mn}}
+	   \end{equation}
+	   
+	   Da beim Gauss-Algorithmus nur Linearkombinationen verwendet werden bleibt der Spannn erhalten.
+	   
+	   \subsubsection{Gauss-Algorithmus: Spann}
+	   \begin{equation}
+	     \vspan{v_1, ..., v_m} = \vspan{\tilde{v}_1,...,\tilde{v}_m}
+	   \end{equation}
+	   
+	   \subsubsection{Gauss-Algorithmus: Dimension, Rang}
+	   Weiterhin gilt:
+	   
+	   \begin{equation}
+	   dim \lbrace \vspan{v_1,...,v_m} \rbrace = dim \lbrace \tilde{v}_1,...,\tilde{v}_m \rbrace = r
+	   \end{equation}
+	   $r$ heißt Zeilenrang von $A$ bzw. der Rang von $A$.
+	   
+	   \subsubsection{Folgerungen}
+	   \begin{satz}$\\$
+	   \textbf{a)}
+	     \glqq Die Lösungen von $Ax = 0$ bilden einen Untervektorraum des $\R^n$, den sogenannten Kern von $A$. \grqq \cite{HM12} \newline
+	     Schreibweise:
+	     \begin{equation}
+	       Kern(A) = ker(A) = kernel(A)
+	     \end{equation}
+	     \newline
+	     \textbf{b)}
+	     \begin{equation}
+	       \ubGreen{n-r}{\vdim{\vker{A}}} + \ubGreen{r}{\vrang{A}} = n
+	     \end{equation}
+	     \newline
+	     \textbf{c)}
+	     \ccite{Ein LGS $Ax = 0$ mit $A \in \R^{nxn}$ besitzt nur die Lösung $x = 0$, wenn $\\\vrang{A} = n$.}{HM12}
+	     \newline
+	     \textbf{d)}
+	     \ccite{Ist $\left(w_1,...,w_k\right)$ eine Basis des Kerns, so lautet die allgemeine Lösung von $Ax = 0$:
+	     \begin{equation}
+	       x = sum_{j = 1}^k \alpha_j w_j \qquad ,\alpha_j \in \R \qquad \colGreen{(Superpositionsprinzip)}
+	     \end{equation}}{HM12}
+	     \newline
+	     \textbf{e)}
+	     \ccite{Ist $x_s$ eine spezielle Lösung von $Ax = b$, so lautet die allgemeine Lösung von $Ax = b$:
+	     \begin{equation}
+	       x = x_s + \sum_{j = 1}^k \alpha_j w_j \qquad, \inR{\alpha_j}
+	     \end{equation}
+       Die Lösungsmenge von $Ax = b$ ist ein \underline{affiner Raum}, d.h. die Differenz von jeweils zwei Elementen bildet einen Vektorraum.}{HM12}
+	   \end{satz}
+	   
+  \subsection{Lineare Abbildungen und Matrizen}
+  \begin{definition}
+    \ccite{Es seien $V$ und $V$ Vektorräume. Eine Abbildung $T: V\rightarrow W$ heißt linear, falls für alle $u,v \in W$ und $\lambda \in \R$ bzw. $\C$
+    \begin{align}
+      T(v+w) &= T(v) + T(w)\\
+      T(\lambda v) &= \lambda T(v)
+    \end{align}
+    gilt.}{HM12}
+  \end{definition}
+  
+  Wie erhält man die Matrix zu einer linearen Abbildung?\newline
+  \ccite{
+    Sei $T:V \rightarrow W$ eine lineare Abbildung. $\lbrace v_1,...,v_n\rbrace$ sei eine Basis von $V$ und $\lbrace w_1,...,w_n\rbrace$ sei eine Basis von W. Dann lässt sich jeder Vektor $T(v_j)$ in eindeutiger Weise als Linearkombintion der $w_1,...,w_m$ darstellen, d.h. es gibt $a_{ij} \in \R$ mit 
+    \begin{equation}
+      T(v_j) = \sum_{i = 1}^m a_{ij} w_i\text{.}
+    \end{equation}
+    $
+      A = \left( 
+      \begin{array}{c c c}
+        a_{11} & ... & a_{1n}\\
+        .      & .   &.      \\
+        a_{m1} & ... & a_{mn}\\
+      \end{array}
+      \right)
+    $
+    heißt die Matrix der linearen Abbildung $T$ bezüglich der Basen $\lbrace v_1,...,v_m\rbrace$ und $\lbrace w_1,...,w_m\rbrace$.
+  }{HM12}
+  
+  \begin{satz}
+  \ccite{
+    Die Koordinaten von $w = T(v)$ entstehhen aus den Koordinaten von $v$ durch Multiplikation mit der Matrix $A$.  
+    \begin{align}
+      w &= T(v) \nonumber\\ 
+      mit \; v &= \sum_{j = 1}^n x_j v_j \; und \; w = \sum_{i = 1}^m y_i w_i \nonumber\\
+      \text{ergibt sich} \nonumber\\
+      \vecDt{y_1}{y_m} &= 
+      \left(\begin{array}{c c c}
+        a_{11} & ... & a_{1n} \\
+        .      & \;  & .      \\
+        .      & \;  & .      \\
+        .      & \;  & .      \\
+        a_{m1} & ... & a_{mn} \\
+      \end{array}\right) 
+      \vecDt{x_1}{x_n}
+    \end{align}
+    bzw. $y = Ax$.
+  }{HM12}
+  \end{satz}
+  
+  \subsubsection{Das Matrizenkalkül}
+  Matrizenmultiplikation tritt bei der Hintereinanderausführung linearer Abbildungen auf.
+  \begin{equation}
+    T(v) = Av,\quad S(w) = Bw \rightarrow (SoT)(v) = \ubGreen{Matrizen}{BA} \ubGreen{Vektoren}{v}
+  \end{equation}
+  Der Eintrag in der i-ten Zeile und j-ten Spalte von $BA$ sieht wie folgt aus:
+  \begin{equation}
+    a_{ij} = \sum_k b_{ik} a_{kj}
+  \end{equation}
+  
+  Damit Matrizen multipliziert werden könnnen, müssen sie die richtige Größe haben.
+  \begin{equation}
+    Mit  \; A \in \R^{\colBlue{m}x\colGreen{n}} \; und \; B \in \R^{\colGreen{n}x\colBlue{k}} = C \in \R^{\colBlue{m}x\colBlue{k}}
+  \end{equation}
+  Matrizenmultiplikation ist im allgemeinen
+  \begin{itemize}
+	  \item nicht kommutativ, d.h. $AB \neq BA$ 
+	  \item nicht nullteilerfrei
+  \end{itemize}
+  
+  \subsubsection{Rechenregeln}
+  \begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+				(\textbf{M1}) & $(A+B)C = AC + BC$ &\\
+				(\textbf{M2}) & $A(B+C) = AB + AC$ &\\
+				(\textbf{M3}) & $A(BC) = (AB)C$ &\\
+				(\textbf{M4}) & $A(\lambda B) = (\lambda A)B = \lambda(AB)$ &\\
+		  \end{tabularx}
+		  \label{ax:matrizen_rregel}
+    \end{equation}	
+    \begin{bem}
+      Es gilt weiterhin:
+      \begin{align}
+        S^{-1}AS &= D\\
+        A^n &= S D^n S^{-1}\\
+      \end{align}
+    \end{bem}
+    
+  \subsubsection{Einheitsmatrix}
+  Die Einheitsmatrix (Identität) Besteht nur aus in der Diagonale Einsen, alle anderen Stellen sind mit Nullen aufgefüllt.
+  \begin{equation}
+    I = id = \left(\begin{array}{c c c c c}
+    1 & \; &  0 & \; & 0\\
+    \;& .  & \; & \; & 0\\
+    0 & \; &  . & \; & 0\\
+    \;& \; & \; & .  & 0\\
+    0 & \;  & 0 & \; & 1\\
+    \end{array}\right)
+  \end{equation}
+  
+  Die Einträge an i-ter Zeile und j-ter Spalte sind über das Kronecker-Delta beschrieben.
+  \begin{equation}
+    \delta_{ij} = \begin{cases}
+	    1,\quad i = j\\
+	    0,\quad i\neq j\\
+    \end{cases}
+  \end{equation}
+  
+  \subsubsection{Inverse Matrix}
+  Es gilt
+  \begin{equation}
+    A^{-1} = A
+  \end{equation}
+  \subsubsubsection{Bestimmung der Inversen bei $nxn$ Matrizen}
+    $\Rightarrow$ Gauss Algorithmus angewandt auf $A|I$ bis $A$ zu $I$ umgeformt ist.
+  \subsubsubsection{Inverse bei $2x2$ Matrizen}
+    \begin{equation}
+    \text{Mit } A = \left(\begin{array}{c c} a & b \\ c & d \\ \end{array}\right), A^{-1} = \frac{1}{detA} \mzxz{d}{-b}{-c}{a} = \frac{1}{ad-bc} \mzxz{d}{-b}{-c}{a}
+    \end{equation}
+    
+   \subsubsection{Symmetrische Matrizen}
+   \begin{definition}
+     Eine reelle $nxn$ Matrix $A$ heißt symmetrisch, falls $A = A^T$.
+   \end{definition}
+   
+   \subsubsection{Schiefsymmetrische Matrizen}
+   \begin{definition}
+     Eine Matrix $A$ heißt schiefsymmetrisch, falls $A^T = -A$.
+   \end{definition}  
+   \begin{bem}
+     $detA = 0$, falls $n$ gerade
+   \end{bem}
+   \begin{bem}
+     $x^TAx = 0$ für alle $x \in \R^n$
+   \end{bem}
+     
+  \subsubsection{Hermitesche Matrizen}  
+  \begin{definition}
+    $A^* := \bar{A}^T$ \newline
+    Eine komplexe $nxn$ Matrix $A$ heißt hermitesch, falls $A = \bar{A}^T$. \label{def:hermitesch}    
+  \end{definition}
+ 
+	\subsubsection{Transposition}
+		Die Transposition besitzt folgende Eigenschaften
+		\begin{equation}
+		  \begin{tabularx}{14.7cm}{l l l}
+			(\textbf{T1}) & $(A+B)^T = A^T + B^T$ &\\
+			(\textbf{T2}) & $(\lambda A)^T = \lambda A^T$ &\\
+			(\textbf{T3}) & $(A^T)^T = A$ &\\
+			(\textbf{T4}) & $(AB)^T = B^T A^T$ & \\
+			(\textbf{T5}) & $(A^T)^{-1} = (A^{-1})^T$ & \\
+		  \end{tabularx}
+		  \label{ax:det_transp}
+	  \end{equation}
+ 
+\subsection{Determinanten}
+  \begin{satz}
+    Determinantenentwicklungssatz: \newline
+    $det(AB) = detA \cdot detB$
+  \end{satz}
+  \begin{bem} Aussagen zu Determinante einer Matrix 
+	  $A \in \R^{nxn}$
+	  \begin{flalign*}
+	    &det(A) \neq 0 \leftrightarrow Rang(A) = n \leftrightarrow A^{-1} existiert&\\
+	    &det(A) \neq 0 \leftrightarrow \text{ Zeilen bzw. Spalten linear unabhängig}&\\
+	    &det(A^T) = det(A)&\\
+	    &det(A^{-1}) = \displaystyle\frac{1}{det(A)}&\\
+	    &det(\lambda A) = \lambda^n det(A)&\\
+	    &det(A+B) \neq det(A) + det(B)&\\
+	    &detA = \prod\limits_{j} \lambda_j &\\
+	  \end{flalign*}
+  \end{bem}  
+  
+  \subsubsection{Bestimmung der Determinanten}
+	  \subsubsubsection{Determinante einer $2x2$ Matrix}
+	  \begin{equation}
+	    A = \mzxz{a}{b}{c}{d},\quad \det A = ad-bc
+	  \end{equation}
+	  
+	  \subsubsubsection{Determinante einer $3x3$ Matrix}
+	  Die Determinante wird über die Sarrussche Regel bestimmt:
+  \begin{align}
+    \det A &= \left|
+      \begin{array}{c c c}
+      A_{aa} & A_{ab} & A_{ac}\\
+      A_{ba} & A_{bb} & a_{bc}\\
+      A_{ca} & A_{cb} & A_{cc}\\
+      \end{array}
+    \right|    
+    = \left|
+      \begin{array}{c c c}
+      \colGreen{A_{aa}} & \colGreen{A_{ab}} & \colGreen{A}_{\colBlue{ac}}\\
+      A_{ba} & \colGreen{A}_{\colBlue{bb}} & \colGreen{A}_{\colBlue{bc}}\\
+      \colBlue{A_{ca}} & \colBlue{A_{cb}} & \colGreen{A}_{\colBlue{cc}}\\
+      \end{array}
+    \right| 
+    \begin{array}{c c}
+      \colBlue{A_{aa}} & \colBlue{A_{ab}}\\
+      \colGreen{A}_{\colBlue{ba}} & A_{bb}\\
+      \colGreen{A_{ca}} & \colGreen{A_{cb}}\\
+    \end{array} \nonumber \\
+    \nonumber \\
+    &\Rightarrow \det A =   \colGreen{A_{aa}} \colGreen{A_{bb}} \colGreen{A_{cc}} 
+      + \colGreen{A_{ab}}   \colGreen{A_{bc}} \colGreen{A_{ca}}
+      + \colGreen{A_{ac}}   \colGreen{A_{ba}} \colGreen{A_{cb}} \nonumber \\
+      &\qquad \qquad \qquad- \colBlue{A_{ca}}    \colBlue{A_{bb}}  \colBlue{X_{ac}} 
+      - \colBlue{A_{cb}}    \colBlue{A_{bc}}  \colBlue{A_{aa}}
+      - \colBlue{A_{cc}}    \colBlue{A_{ba}}  \colBlue{A_{ab}}
+  \end{align}
+  
+  \subsubsubsection{Determinante einer Matrix > $3x3$}
+  \begin{satz}
+    Determinantenentwicklungssatz: Für $A \in \R^{nxn}$ bezeichne $A_{ik}$ die aus $A$ durch Streichung der $i-ten$ Zeile und $k-ten$ Spalte entstehende Matrix. Dann gilt:
+    \begin{align*}
+      \det A = \sum_{k=1}^{n} (-1)^{i+k} a_{ik}\det A_{ik}
+    \end{align*}
+    wobei $i$ fest gewählt wird.
+  \end{satz}
+  
+  Es bietet sich hierbei an $i$ so zu wählen, dass möglichst viele Teile der Entwicklung sich durch eine $0$ löschen.
+  \begin{align*}
+    det \mdxd{1 & 2 & 2}{3 & 4 & 5}{5 & 6 & 7} &= a_{11} det(A_{11}) (-1)^{1+1} + a_{12} det(A_{12})(-1)^2{1+2} + a_{13}det(A_{13})(-1)^{1+3} \\
+    &= 1\cdot \left|\begin{array}{c c} 4 & 5 \\ 6 & 7 \\ \end{array}\right|
+      -2 \cdot \left|\begin{array}{c c} 3 & 5 \\ 5 & 7 \\ \end{array}\right|
+      + 2 \cdot \left|\begin{array}{c c} 3 & 4 \\ 5 & 6 \\ \end{array}\right|\\
+    &= 1(-2)-2(-4)+2(-2) = 2
+  \end{align*}
+  
+  \subsection{Eigenwerttheorie}
+  \begin{definition}
+    Eine Zahl $\lambda \in \C$ heißt Eigenwert (EW) der Matrix $A$, falls es einen Vektor $v \in \C^n$ gibt mit $Av = \lambda v$ und $v \neq 0$. $v$ heißt ein zum Eigenwert $\lambda$ gehöriger Eigenvektor (EV). Die Menge aller Eigenvektoren eines Eigenwertes $\lambda$ zusammen mit $0$ heißt der Eigenraum.
+    \begin{equation}
+      E_{\lambda} = \lbrace v \in \C^n | Av = \lambda v \rbrace
+    \end{equation}      
+  \end{definition}
+  \begin{satz}
+    $\lambda \in \C$ ist ein EW von $A$ genau dann, wenn
+    \begin{equation}
+      p_A(\lambda) = det(A-\lambda I) = 0 \label{eq:ew_charpol}
+    \end{equation}
+  \end{satz}
+  
+  \subsubsection{Bestimmung der Eigenwerte und Eigenvektoren}
+  \begin{flalign*}
+    &\textbf{Schritt 1: } \text{\eqref{eq:ew_charpol} anwenden und NST bestimmen. Es gilt}&
+  \end{flalign*}
+  \begin{align}
+    \text{Vielfachheit der NST} &= \text{algebraische Vielfachheit}; Schreibweise: \\ a(\lambda_j) &= x \in \R 
+  \end{align}
+  \begin{flalign*}
+    &\textbf{Schritt 2: } \text{Eigenvektoren zur Matrix $A$ bestimmen. Es gilt:}&
+  \end{flalign*}
+  \begin{align}
+    Av = \lambda_j v \Rightarrow (A- \lambda_j I)v = 0
+  \end{align}
+  \begin{flalign*}
+    &\textbf{Schritt 2.1: } \text{Gegebenenfalls geometrische Vielfachheiten ablesen(Anzahl an Nullzeilen), es gilt:}&
+  \end{flalign*}
+  \begin{align}
+    \text{geometrische Vielfachheit} := g(\lambda_j) = dim(A_{\lambda_j}) = n-Rang(A - \lambda I)\label{meth:eigenwerte_eigenvektoren_best}
+  \end{align}
+  \begin{bem}
+    Die Anzahl an Eigenvektoren pro Eigenwert müssen der geometrischen Vielfachheit entsprechen. Die Eigenvektoren pro Eigenwert müssen linear unabhängig sein. \label{meth:eigenwert_eigenvektor}
+    \end{bem}
+  \subsubsection{Basis des Eigenraumes bestimmen}
+  Die Eigenvektoren bilden eine Basis des Eigenraumes. Es gilt:
+  \begin{equation}
+    S_1 = (v_1, v_2, ..., v_j)
+  \end{equation}
+  
+  \begin{satz}
+    Sei $A \in \C^{nxn}$ eine hermitesche Matrix (siehe \eqref{def:hermitesch}). Dann gilt:
+    \begin{itemize}
+      \item Die Eigenwerte von $A$ sind reell
+      \item Die Eigenvektoren zu verschiedenen Eigenwerten sind orthogonal zueinander
+    \end{itemize}     
+  \end{satz}
+  
+  \subsubsection{Orthonormalbasis des Eigenraumes bestimmen (Gram Schmidt)}
+  Im Folgenden sei davon ausgegangen, dass die Eigenvektoren nicht orthogonal zueinander stehen. Im Falle bereits orthogonaler Eigenvektoren kann auf die Orthogonalisierung verzichtet werden (nicht jedoch auf die Normierung).
+  Es seien $v_1, v_2, v_3$ Eigenvektoren von $A$. 
+  \begin{flalign*}
+    &\textbf{Schritt 1: } \text{Ersten Eigenvektor normieren}&
+  \end{flalign*}
+  \begin{align*}
+    w_1 = \frac{v_1}{||v_1||}
+  \end{align*}
+  \begin{flalign*}
+    &\textbf{Schritt 2: } \text{Zweiten Eigenvektor orthogonalisieren}&
+  \end{flalign*}
+  \begin{align*}
+    \tilde{w_2} = v_2 - <w_1, v_2> w_1
+  \end{align*}
+  \begin{flalign*}
+    &\textbf{Schritt 3: } \text{Zweiten Eigenvektor normieren}&
+  \end{flalign*}
+  \begin{align*}
+    w_2 = \frac{\tilde{w_2}}{||\tilde{w_2}||}
+  \end{align*}
+  \begin{flalign*}
+    &\textbf{Schritt 4: } \text{Dritten Eigenvektor orthonormieren}&
+  \end{flalign*}
+  \begin{align}
+    \tilde{w_3} = v_3 - <w_2, v_3&> w_2 - <w_1, v_3> w_1 \nonumber \\
+    w_3 &= \frac{\tilde{w_3}}{||\tilde{w_3}||} \nonumber\\\label{meth:eigenraum_onb}
+  \end{align}
+  Das Verfahren kann auf beliebig viele Eigenvektoren erweitert werden. Die so erhaltenen Vektoren bilden eine Orthonormalbasis des Eigenraums:
+  \begin{equation}
+    S_2 = (w_1, w_2, w_3)
+  \end{equation}
+  Weiter gilt:
+  \begin{equation}
+    S_2 S_2^T = I, \qquad \text{\colBlue{da $S_2$ orthogonal ist}}
+  \end{equation}
+  und
+  \begin{equation}
+    D := \left(\begin{array} {c c c}
+      \lambda_1 & 0         & 0 \\
+      0         & \lambda_2 & 0 \\
+      0         & 0         & \lambda 3 \end{array} \right) 
+      = S_2^T A S_2 \label{eq:diag_matrix}
+  \end{equation}
+  und somit
+  \begin{align}
+    A^{-1} = (S_2 D S_2^T)^{-1} = (S_2^{-1})^{-1} D^{-1} S_2^{-1} = S_2 D^{-1} S_2^T
+  \end{align}
+  
+  \subsubsection{Projektion}
+  \begin{bem}
+  Projektion von x auf w:
+  \begin{equation}
+    P(x) = \sum\limits_{i=1}^m <v_i, x> v_i    
+  \end{equation}
+  \end{bem}
+  
+  \subsection{Differentialgleichungssysteme}
+  \begin{flalign*}
+    &\textbf{Schritt 1: } \text{Überführung in Matrixdarstellung}&
+  \end{flalign*}
+  \begin{flalign*}
+    &\textbf{Schritt 2: } \text{Eigenwerte und Eigenvektoren bestimme (siehe \eqref{meth:eigenwert_eigenvektor}}&
+  \end{flalign*}
+  \begin{flalign*}
+    &\textbf{Schritt 3: } \text{Allgemeine Lösung bilden:}&
+  \end{flalign*}
+  \begin{align*}
+    x(t) = Sy(t) = (v_1, ..., v_n)\vecT{C_1 e^{\lambda_1 t} \\ \vdots \\ C_n e^{\lambda_n t}} = C_1 e^{\lambda_1 t} + ... + C_n e^{\lambda_n t}
+  \end{align*}
+  \begin{flalign*}
+    &\textbf{Schritt 4: } \text{Anfangsbedingungen (z.B. $x^* = 0$) einsetzen und bestimmen}&
+  \end{flalign*}
+  \begin{align*}
+     &S:= (v_1, ..., v_n) \\
+     x(0) = &Sy(x^*) = \left(\begin{array}{c c c} \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot \\ \end{array}\right) \cdot \vecT{C_1 \\ C_2 \\C_3} = x^* 
+  \end{align*}
+  
+  \subsection{Quadriken bestimmen}
+    \subsubsection{Methode}
+    \begin{flalign*}
+    &\textbf{Schritt 1: } \text{Diagonalmatrix $A$, Vektor $b$ und Konstante $c$ ablesen}&
+  \end{flalign*}
+    \begin{align*}
+    \textbf{Beispiel:}\\
+      \colGreen{-1}x_1^2 \colGreen{-1}x_2^2 + \colGreen{1}x_3^2 + \colRed{6}x_1x_2 + 2x_1x_2 + \colBord{2}x_1x_3 + &\colBlue{2}x_2x_3 -12x_1 + 4x_2 -10x_3 - 11 = 0 \\
+      A = \left(\begin{array}{c c c}
+      \colGreen{-1} & \colRed{3}  & \colBord{1}\\
+      \colRed{3}  & \colGreen{-1} & \colBlue{1}\\
+      \colBord{1}  & \colBlue{1}  & \colGreen{1} \\
+      \end{array} \right), b &= \vecT{-12 \\ 4 \\ -10}, c = 11\\
+    \end{align*}
+    Im Zuge der Vorlesung gilt immer $A = A^T$.
+    \begin{flalign*}
+    &\textbf{Schritt 1.1: } \text{Als Quadrik aufschreiben}&
+    \end{flalign*}
+    \begin{align*}
+      q(x) &= x^TAx+b^Tx + c\\
+      &= \vecT{x_1 \\ x_2 \\ x_3}^T \left(\begin{array}{c c c}
+      -1 & 3  & 1\\
+      3  & -1 & 1\\
+      1  & 1  & 1 \\
+      \end{array} \right) + \vecT{-12 \\ 4 \\ -10}^T \vecT{x_1 \\ x_2 \\ x_3} + 11
+     \end{align*}
+     \begin{flalign*}
+      &\textbf{Schritt 2: } \text{Diagonalmatrix $\Lambda$ bestimmen}&
+     \end{flalign*}
+     Dazu nach \eqref{meth:eigenwerte_eigenvektoren_best} Eigenwerte und Eigenvektoren bestimmen, nach \eqref{meth:eigenraum_onb} eine Orthonormalmatrix mit den Eigenvektoren erzeugen und schließlich nach \eqref{eq:diag_matrix} die Diagonalmatrix $\Lambda$ bilden.
+     \begin{flalign*}
+      &\textbf{Schritt 3: } \text{Vektor $\tilde{b}$ bestimmen sodass gilt $q(Sy) = y^T\Lambda y + \tilde{b}^T y + c$:}&
+     \end{flalign*}
+     \begin{align*}
+       q(Sy) &= (Sy)^T ASy + \tilde{b}^T Sy + c = y^T S^T ASy + (S^T \tilde{b})^T y + c \\
+       &= y^T\Lambda y + \tilde{b}^T y + c \Rightarrow \tilde{b} := S^T b
+     \end{align*}
+     \begin{flalign*}
+      &\textbf{Schritt 4: } \text{In $q(Sy) = y^T\Lambda y + \tilde{b}^T y + c$ einsetzen:}&
+     \end{flalign*}
+     \begin{align*}
+       q(Sy) &= y^T\Lambda y + \tilde{b}^T y + c \\
+       &= \vecT{y_1 \\ y_2 \\ y_3}^T 
+       \left(\begin{array}{c c c}
+       \lambda_1 & 0         & 0 \\
+       0         & \lambda_2 & 0 \\
+       0         &  0        & \lambda_3
+       \end{array}\right) \vecT{y_1 \\ y_2 \\ y_3} + \vecT{\tilde{b_1} \\ \tilde{b_2} \\ \tilde{b_3}} + c
+     \end{align*}
+     \begin{flalign*}
+      &\textbf{Schritt 5: } \text{Ausmultiplizieren und quadratisch ergänzen}&
+     \end{flalign*}
+     Hierbei ist wichtig, dass die quadratischen Anteile ohne Faktor in das Binom übergehen (also vorher ausklammern).
+     \begin{flalign*}
+      &\textbf{Schritt 6: } \text{Quadrik anhand nachfolgender Tabellen ablesen}&
+     \end{flalign*}
+     
+     \subsubsection{Normalformen von Quadriken im $\R^2$}
+     \formTab{Ellipse}{\displaystyle\left(\frac{x_1}{a}\right)^2 + \left(\frac{x_2}{b}\right)^2 - 1 = 0}
+     \formTab{Kreis}{x_1^2 + x_2^2 = r}
+     \formTab{Schneidendes Geradenpaar}{\displaystyle\frac{x_1^2}{a^2} - \frac{x_2^2}{b^2} = 0}
+     \subsubsection{Normalformen von Quadriken im $\R^3$}
+     \formTab{Ellipsoid}{x^2 +y^2 +z^2 -1 = 0}
+     \formTab{Einschaliges Hyperboloid}{x^2 + y^2 -z^2 -1 = 0}
+     \formTab{Zweischaliges Hyperboloid}{x^2+y^2-z^2 + 1 = 0}
+     \formTab{Elliptisches Paraboloid}{x^2 + y^2 -2z = 0}
+     \formTab{Hyperbolisches Paraboloid}{x^2 - y^2 -2z = 0}
+     
+     
+     
+  \subsection{Äquivalenzaussagen}
+  \begin{satz}
+  Für $A \in \R^{dxd}$ sind folgende Aussagen äquivalent
+  \begin{description}
+   \item[a)] $A$ ist regulär
+   \item[b)] Rang von $A$ ist gleich $d$
+   \item[c)] Die Zeilenvektoren von $A$ sind linear unabhängig
+   \item[d)] $Ax = 0$ hat nur $x=0$ als Lösung
+   \item[e)] $Ax = b$ ist eindeutig lösbar
+   \item[f)] Die Spaltenvektoren sind linear unabhängig
+   \item[g)] Die Matrix besitzt eine Inverse $A^{-1}$
+   \item[h)] Die Determinante von $A$ ist ungleich $0$
+   \item[i)] $A$ besitzt keinen Eigenwert $0$
+  \end{description}
+  \end{satz}
+  \newpage

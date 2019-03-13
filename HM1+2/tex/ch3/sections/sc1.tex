@@ -1,0 +1,301 @@
+\section{Integralberechnung}
+\subsection{Unbestimmtes Integral}
+\begin{equation}
+\int f(x) dx = F(x) + C = [F(x)]\qquad, C\in\R \label{eq:def_noBorder}
+\end{equation}
+
+\subsection{Bestimmtes Integral}
+\begin{equation}
+\int_a^b f(x) dx = F(b) - F(a) \label{eq:def_border}
+\end{equation}
+
+\subsection{Partielle Integration}
+Entspricht der "Produktregel" der Differentialrechnung.
+\begin{equation}
+\int_{\colBord{a}}^{\colBord{b}} f'(x) g(x) dx = f(x) g(x) \colBord{\Big|_a^b} - \int_{\colBord{a}}^{\colBord{b}} f(x) g'(x) dx \label{eq:rule_partInt}
+\end{equation}
+Bietet sich zum Beispiel bei Produkten aus x-Potenz mit e-Funktionen, log, sin oder cos an.
+
+\subsection{Integration durch Substitution}
+Entspricht der "Kettenregel" der Differentialrechnung.
+\begin{equation}
+\int_{\colBord{a}}^{\colBord{b}} f(g(x))g'(x) dx = \int_{\colBord{g(a)}}^{\colBord{g(b)}} f(y) dy \qquad (setze \quad y = g(x) \label{eq:rule_subs}
+\end{equation}
+
+\subsubsection{Spezialfall}
+\begin{equation}
+\int \frac{f'(x)}{f(x)} dx = ln(|f(x)|) + C \qquad ,C\in\R \label{eq:rule_spec}
+\end{equation}
+
+\subsection{Gerade/Ungerade Funktionen}
+\begin{align}
+\int_{-a}^a f(x) = 
+\begin{cases}
+2 \int_0^a f(x) dx &,\; f\; gerade\\
+0 &,\; f\; ungerade\\
+\end{cases} \label{eq:evenodd}
+\end{align}
+\begin{align*}
+\text{f gerade, falls }f(-x) &= f(x) \qquad &(z.B.: cos(x), x^2)\\
+\text{f ungerade, falls }f(-x) &= -f(x) \qquad &(z.B.: sin(x), x^3)\\
+\end{align*}
+
+\subsection{Allgemeines zur Integration}
+\subsubsection{Riemann Integrierbarkeit}
+$f:[a,b] \rightarrow \R$ stetig bzw. monoton \newline
+$\Rightarrow$ f ist R-integrierbar.
+
+\subsubsubsection{Riemannsches Unterintegral}
+\begin{equation}
+\int_{a}^{\bar{b}} f(x) dx = \sup\{U_f(Z): \; \text{Z Zerlegung von }[a,b]\}
+\end{equation}
+
+
+\subsubsubsection{Riemannsches Oberintegral}
+\begin{equation}
+\int_{\bar{a}}^{b} f(x) dx = \inf\{O_f(Z): \; \text{Z Zerlegung von }[a,b]\}
+\end{equation}
+
+$\rightarrow \text{f heißt Riemann-integrierbar über }[a,b]$, falls
+\begin{equation}
+\int_{\bar{a}}^{b} f(x) dx = \int_a^{\bar{b}} f(x) dx
+\end{equation}
+\newline
+In diesem Fall heißt der Wert das Riemannn-Integral und wird mit $\int_a^b f(x)dx$ bezeichnet.
+
+\subsubsubsection{Riemannsche Untersumme}
+\begin{equation}
+  U_f(Z) = \sum_{j = 0}^{n-1} \inf\limits_{\xi \in [x_j, X_{j+1}]} f(\xi) \cdot (x_{j+1} -x_j)
+\end{equation}
+\subsubsubsection{Riemannsche Obersumme}
+\begin{equation}
+  O_f(Z) = \sum_{j = 0}^{n-1} \sup\limits_{\xi \in [x_j, X_{j+1}]} f(\xi) \cdot (x_{j+1} -x_j)
+\end{equation}
+
+\subsubsubsection{Eigenschaften}
+\begin{description}
+\item[a)]
+Falls $a<b$ setzen wir:
+\begin{align}
+\int_b^a f(x) dx &= -\int_a^bf(x)dx \nonumber \\
+\int_a^a f(x) dx &= 0
+\end{align}
+\item[b)]
+f, g seien R-integrierbar, $\lambda , \mu \in \R \rightarrow \lambda f + \mu g$ ist R-integrierbar (Vektorraumeigenschaft).
+\begin{equation}
+\int_a^b \lambda f + \mu g)(x)dx = \lambda \int_a^b f(x) dx + \mu \int_a^b g(x) dx
+\end{equation}
+\item[c)]
+$a<C<b$, f ist R-integrierbar.
+\begin{equation}
+\int_a^b f(x) dx = \int_a^C f(x) dx + \int_C^b f(x) dx
+\end{equation}
+\item[d)]
+\begin{align}
+f(x) \ge 0 &\Rightarrow \int_a^b f(x) dx \ge 0 \nonumber \\
+f(x) \ge g(x) &\Rightarrow \int_a^b f(x) dx \ge \int_a^b g(x)dx
+\end{align}
+\item[e)]
+\begin{equation}
+\text{Sind $f$ und $g$ R-integrierbar ist auch $f*g$ R-integrierbar.}
+\end{equation}
+\item[f)]
+\begin{align}
+g(x) \ge C > 0 \Rightarrow \frac{f}{g} \text{ ist R-integrierbar.}
+\end{align}
+\item[g)]
+\begin{equation}
+\text{Ist $f$ R-integrierbar dann ist auch } |f| \text{ R-integrierbar.}
+\end{equation} 
+\item[h)]
+\begin{equation}
+(b-a) \inf_{x\in[a,b]}{f(x)} \le \int_a^b f(x) dx \le (b-a) \sup_{x\in [a,b]}{f(x)}
+\end{equation}
+\end{description}
+
+\subsubsubsection{Kriterien zur Riemann-Integrierbarkeit}
+
+\begin{description}
+\item[a)]
+$f$ monoton $\Rightarrow f$ R-integrierbar.
+\item[b)]
+$f$ stetig $\Rightarrow f$ R-integrierbar
+\begin{satz}
+\glqq Jede stetige Funktion $f:k \rightarrow \R$ auf einer kompakten Menge k, d.h. für $k<\R^d$ abgeschlossen und beschränkt, ist dort gleichmäßig stetig und damit R-integrierbar.\grqq \cite{HM12}
+Beispiel für k: $k:[a,b]$
+\end{satz}
+\item[c)]
+\begin{satz}
+Kriterium: Jede Funktion deren Unstetigkeitsstellen eine Nullmenge bilden (z.B. abzählbare Mengen) sind R-integrierbar.
+\glqq Satz: Eine Funktion $f:[a,b]\rightarrow \R$ ist genau dann R-integrierbar, wenn $f$ beschränkt ist und die Menge der Unstetigkeitsstellen eine Nullmenge ist. 
+\grqq \cite{HM12}
+\end{satz}
+Die Konsequenz daraus lautet, dass jede stetige Funktion mit endlich vielen Sprungstellen R-integrierbar ist. \citeVgl{HM12}
+\item[d)]
+\begin{satz}
+\glqq Sei $f:[a,b] \rightarrow \R$ beschränkt. Dann ist $f$ R-integrierbar genau dann, wenn es zu jedem $\varepsilon > 0$ eine Partition $Z$ gibt, 
+so dass
+$O_f(Z)  U_f(Z) < \varepsilon$. \grqq \cite{HM12}
+\end{satz}
+Anmerkung: \glqq In der Mengenlehre ist eine Partition (auch Zerlegung oder Klasseneinteilung) einer Menge M eine Menge P, deren Elemente nichtleere Teilmengen von M sind, sodass jedes Element von M in genau einem Element von P enthalten ist. Anders gesagt: Eine Partition einer Menge ist eine Zerlegung dieser Menge in nichtleere paarweise disjunkte Teilmengen.\grqq  \cite{wiki}
+
+\end{description}
+
+\subsubsection{MWS der Integralrechnung}
+$f:[a,b]\rightarrow\R$ stetig, dann $\exists \; \xi \in[a,b]$ mit $\int_a^b f(x)dx = f(\xi)(b-a)$.
+
+\subsubsection{Hauptsatz der Differential- und Integralrechnung}
+$f:[a,b]\rightarrow\R$ stetig, dann ist $F(x) = \int_a^x f(t)dt$ diffbar und $F'(x) = f(x)$.
+
+\subsubsubsection{Folgerungen}
+\begin{satz}
+Ist $f$ ungerade, so ist $f''$ gerade, und alle Stammfunktionen vonm $f$ sind gerade.\citevgl{HM2Vortragsubung}
+\end{satz}
+\begin{satz}
+Ist $f$ gerade, so ist $f'$ ungerade, und $f$ besitzt eine ungerade Stammfunktion.\citevgl{HM2Vortragsubung}
+\end{satz}
+
+\subsection{Partialbruchzerlegung}
+	\begin{equation}
+	  R(x) = \frac{p(x)}{q(x)}, \qquad p,q\text{ Polynome}
+	\end{equation}
+	Vorgehensweise:
+	\begin{description}
+	  \item{\textbf{1)}} Zähler und Nennergrad untersuchen\newline
+	  ist $grad(p) > grad(q)$, also Zählergrad > Nennergrad umformen in  \newline$R(x) = p_1(x) + \frac{p_2(x)}{q(x)}$ $\Rightarrow$ Polynomdivision.
+	  \item{\textbf{2)}} Nullstellen und faktorisieren
+	    \begin{itemize}
+	      \item Nullstellen des Nenners bestimmen
+	      \item Nenner Faktorisieren in $p1, p2, ...$
+	    \end{itemize}
+	  \item{\textbf{3)}} Ansatz
+	    \begin{itemize}
+	      \item Ansatz für Partialbruchzerlegung $R(x) = \frac{A}{p1} + \frac{B}{p2} + ...$
+	      \item Bestimmung von A, B, C, ...
+	    \end{itemize}
+	\end{description}
+  Bei quadratischen oder höhergradigen Nullstellen lautet der Ansatz:
+  \begin{equation}
+    NST = x^n \Rightarrow R(x) = \frac{A}{x} + \frac{B}{x^2} + ... + \frac{N}{x^n}
+  \end{equation}
+  Bei komplexen Nullstellen muss der Ansatz angepasst werden.
+  \begin{align}
+    &NST: 2, -2, 2i, -2i \nonumber \\
+    &Ansatz: R(x) = \frac{A}{x-2} + \frac{B}{x+2} + \frac{Cx + D}{x^2+4}
+  \end{align}
+  Es werden also die komplexen Nullstellen ausmultipliziert und so reell dargestellt.
+  
+\subsection{Uneigentliche Integrale}
+  \begin{satz}
+    Sei $f:[a, \infty] := I \rightarrow \R$ lokal integrierbar. Konvergiert $\int_a^\infty f(x) dx$ absolut. d.h. ist $\int_a^\infty |f(x)| dx$ konvergent, so konvergiert auch $\int_a^\infty f(x) dx$.
+  \end{satz}
+  \begin{satz}
+    Majorantenkriterium: Gilt für alle $x\in I$, dass $|f(x)| \leq g(x)$, und ist $\int_a^\infty g(x) dx$ konvergent, so ist $\int_a^\infty dx$ (im Script vom Prof ist hier die untere Grenze 0, ich denke es sollte aber a sein) absolut konvergent.    
+  \end{satz}
+  \begin{satz}
+    Minorantenkriterium: Gilt für alle $x\in I$, dass $0 \leq g(x) \leq f(x)$ und divergiert $\int_a^\infty g(x) dx$, so divergiert auch $\int_a^\infty dx$.
+  \end{satz}
+  \begin{bem}
+    Abschätzungen mit negativen Minoranten sind falsch da mit einer negativen Minorante alles nach unten abgeschätzt werden kann.
+  \end{bem}
+  \subsubsection{Typen uneigentlicher Integrale}
+  \begin{align}
+    \textbf{\colGreen{Singularität:} }\int_{\colGreen{0}}^1 \frac{1}{\sqrt{\colGreen{x}}} dx \nonumber \\
+    \textbf{\colGreen{Unbeschränktes Gebiet:} }\int_1^{\colGreen{\infty}} e^{-x} dx \nonumber \\
+  \end{align}
+  \begin{definition}
+    Eine Singularität ist die Stelle, an der die Funktion divergieren würde oder undefiniert wäre.
+  \end{definition}
+  \textbf{Methode:} Ersetzen der kritischen Stelle durch $z$ und setzen eines Grenzüberganges, z.B.:
+  \begin{align*}
+    \lim\limits_{z\rightarrow0} \int_z^1 \frac{1}{\sqrt{x}} dx, \quad \lim\limits_{z\rightarrow \infty} \int_1^z e^{-x} dx
+  \end{align*}
+  \textbf{Vergleichsintegrale}
+  \begin{align}
+    \int_1^\infty \frac{1}{x^\alpha} dx = 
+    \begin{cases}
+      \text{konvergiert}\quad , \alpha > 1 \\
+      \text{divergiert}\quad , \alpha \leq 1
+    \end{cases} \nonumber\\
+    \int_0^1 \frac{1}{x^\alpha} dx = 
+    \begin{cases}
+      \text{divergiert}\quad , \alpha \geq 1 \\
+      \text{konvergiert}\quad , \alpha < 1
+    \end{cases} \nonumber\\    
+  \end{align}
+
+\subsection{Wichtige Integrale}
+\begin{equation}
+  \int \frac{1}{1+y^2} dx = arctan(y)
+\end{equation}
+\begin{equation}
+  \int x^n dx = \frac{x^{n+1}}{n+1}, \qquad n \neq -1
+\end{equation}
+\begin{equation}
+  \int \frac{1}{cos^2(x)} dx = tan(x)
+\end{equation}
+\begin{equation}
+  \int \frac{1}{sin^2(x)} dx = cot(x)
+\end{equation}
+\begin{equation}
+  \int a^x dx = \frac{a^x}{ln(a)}
+\end{equation}
+\begin{equation}
+  \int \frac{1}{x} dx = ln|x|
+\end{equation}
+\begin{equation}
+  \int \frac{1}{cosh^2(x)} dx = tanh(x)
+\end{equation}
+\begin{equation}
+  \int \frac{1}{sinh^2(x)} dx = -coth(x)
+\end{equation}
+\begin{equation}
+  \int ln(x) dx = x ln(x) -x
+\end{equation}
+\begin{equation}
+  \int \frac{1}{x-x_1} dx = ln|x-x_1|
+\end{equation}
+\begin{equation}
+  \int \frac{1}{/x-x_1)^k} dx = \frac{1}{-k+1}(x-x_1)^{-k+1}, \quad k>1
+\end{equation}
+\begin{equation}
+  \int \frac{1}{(x-a)^2+b^2}dx = \frac{1}{b^2} \int \frac{1}{\left(\frac{x-a}{b}\right)^2 +1} dx = \frac{1}{b} arctan\left(\frac{x-a}{b}\right)
+\end{equation}
+
+\subsection{Separierbare DGL}
+  \subsubsection{Wiederholung klassische DGL}
+  Bisher: lineare DGl mit konstanten Koeffizienten. \newline
+  z.B.: $y''(t) - 5y'(t) + 4y(t) = e^{\colGreen{2}t} \qquad ,\; y(0) = 1,\; y'(0) = 1$ \newline
+  \begin{tabularx}{14.7cm}{l l}
+	  Homogene DGL: & $y(t) = e^{\lambda t} \Rightarrow p(\lambda) = \lambda^2 - 5 \lambda +4 = 0$ \\
+	  $\;$ & $\Rightarrow \lambda_1 = 1, \; \lambda_2 = 4$ \\
+	  $\;$ & $\Rightarrow yh(t) = C_1 e^t + C_2 e^{4t} \qquad ,\;C_1,\;C_2 \in \R$\\
+	  $\;$ & $\;$ \\
+	  Inhomogenes DGL: & $\ubGreen{\text{da 2 keine NST}}{yp(t) = re^{2t}}$\\
+  \end{tabularx}  
+  \begin{align*}
+    &\Rightarrow yp'(t) = 2re^{2t},\; yp''(t) = 4re^{2t} \\
+    &\overset{DGL}{=} 4re^{2t} - 10re^{2t} + 4re^{2t} \overset{!}{=} e^{2t} \Rightarrow -2re^{2t} = e^{2t}\\
+    &\Rightarrow r = -\frac{1}{2}
+  \end{align*} 
+  \begin{tabularx}{14.7cm}{l l}
+	  Allgemeine Lösung: & $y(t) = yh(t) + yp(t) = C_1 e^t + C_2 e^{4t} - \frac{1}{2} e^{2t}$
+  \end{tabularx}
+  
+  \subsubsection{Lösen von DGL mit Koeffizienten die von t abhängig sind}
+  z.B. $ y'(t) - ty(t) = t \qquad ,\; y(0) = 1$\newline
+  \newline
+  Spezielle Form: 
+  \begin{equation}
+    y'(t) = f(t) g(y(t)) \qquad,\; y(t_0) = y_0
+  \end{equation}     
+  \begin{align*}
+    \Rightarrow y'(t) = t+ty(t) = \ubGreen{f(t)}{t} \ubGreen{(1+y(t))}{g(y(t))}
+  \end{align*}
+  Lösung: Trennung der Veränderlichen:
+  \begin{align}
+  \frac{y'}{g(y)} = f(t) \overset{\colGreen{y' = \frac{dy}{dt}}}{\Rightarrow} \colGreen{\int} \frac{1}{g(y)} dy = \colGreen{\int} f(t)dt +C \quad ,\;C\in\R
+  \end{align}
+  $C$ erhält man aus der Anfangsbedingung $y(t_0) = y_0$.
+  \newpage
+	

@@ -1,0 +1,27 @@
+ \section{Lineare Gleichungssysteme}
+  \subsection{Gauss Algorithmus}
+  Siehe Kurzzusammenfassung HM2
+  \begin{align}
+	     \begin{array}{c c c c c c c c l}
+	       \tilde{a}_{11} x_1 & + & \tilde{a}_{12} x_2 & + & \dots & + & \tilde{a}_{1n} x_n & = &  \tilde{b}_1 \\
+	       \ddots &\;& \ddots &\;&\;&\;&\;&\;&\vdots\\
+	       \; & \; & a^{(r)}_{rr}x_r &+& \dots &+& a^{(r)}_{rn}x_n &=& b_r\\
+	       &\;&\;&\;&\;&\;& 0 & = & b^{(r)}_{r+1}\\
+	       &\;&\;&\;&\;&\;& \; & \vdots & \;\\
+	       &\;&\;&\;&\;&\;& 0 & = & b^{(r)}_{m}
+	     \end{array}
+	\end{align}
+	\begin{definition}
+	  Die Zahl $r$ heißt der Rang der Matrix A. Die Zahl $a_{11}$ heißt Pivotelement (Tendenziell eher die Zahlen $a_{11}$ bis $a_{rr}$ heißen Pivotelemente, aber so wie oben stehts im Script). 
+	\end{definition}
+	
+	\subsubsection{Lößbarkeit}
+	\begin{itemize}
+	  \item[1. Fall: ]
+	  Damit Lösungen existieren können, muss $b^{(r)}_{r+1} = ... = b^{(r)}_{m} = 0$ gelten, sonst existieren keine Lösungen. Das heißt es darf keine Zeile allgemein der Form $a = 0$ mit $-\infty < a < 0 \lor 0 < a < \infty$ existieren.
+	  \item[2. Fall: ]
+	    Ist $b^{(r)}_{r+1} = ... = b^{(r)}_{m} = 0$ und ist $r = n$, so existiert eine eindeutige Lösung. Das heißt es existieren gleich viele Unbekannte wie Zeilen und Fall 1 ist ausgeschlossen.
+    \item[3. Fall: ]
+    Ist $b^{(r)}_{r+1} = ... = b^{(r)}_{m} = 0$ und ist $r < n$, so existiert eine Schar von Lösungen. D.h. es kann eine Variable frei gewählt werden.
+  \end{itemize}
+	\newpage

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: HM12_Kurzzusammenfassung_01.aux
+The style file: agsm.bst
+Database file #1: ./bib/lit.bib
+Warning--empty publisher in GDE12
+You've used 8 entries,
+            2909 wiz_defined-function locations,
+            684 strings with 5368 characters,
+and the built_in function-call counts, 18153 in all, are:
+= -- 2856
+> -- 192
+< -- 0
++ -- 1266
+- -- 56
+* -- 1389
+:= -- 3952
+add.period$ -- 14
+call.type$ -- 8
+change.case$ -- 110
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 108
+empty$ -- 221
+format.name$ -- 72
+if$ -- 3201
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 33
+num.names$ -- 80
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 120
+quote$ -- 0
+skip$ -- 77
+stack$ -- 0
+substring$ -- 3878
+swap$ -- 8
+text.length$ -- 112
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 1
+while$ -- 168
+width$ -- 0
+write$ -- 108
+(There was 1 warning)

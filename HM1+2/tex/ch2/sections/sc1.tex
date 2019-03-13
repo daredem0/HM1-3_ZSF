@@ -1,0 +1,241 @@
+\section{Zahlen}
+  \subsection{Zahlbereiche}
+    \subsubsection{Natürliche Zahlen}
+    \begin{itemize}
+      \item Direkt vom Zählen abgeleitet.
+      \item $\N = \{1, 2, 3, 4, ...\}$
+      \item Gleichungen wie $n+x = m$ i.A. in $\N$ nicht lösbar. 
+    \end{itemize}
+
+    \subsubsection{Ganze Zahlen}
+    \begin{itemize}
+      \item $\Z = \{..., -3, -2, -1, 0, 1, 2, 3, ...\}$
+      \item Gleichungen wie $n \cdot x = m$ i.A. in $\Z$ nicht lösbar.
+    \end{itemize}
+
+    \subsubsection{Rationale Zahlen}
+		\begin{itemize} 
+			\item $\Q = \left\lbrace \frac{m}{n}: n\in \N, m \in \Z\text{, m, n teilerfremd} \right\rbrace$
+			\item Gleichungen wie $x^2 = 2$ in $\Q$ nicht lösbar.
+		\end{itemize}
+
+		\subsubsection{Reelle Zahlen}
+		\begin{itemize}
+			\item $\R = \left\lbrace x = \sum_{j = - \infty}^n x_j 10^j : x_j \in \{0, 1, ..., 9\}\; \text{für ein n} \in \Z \right\rbrace $
+			\item Gleichungen wie $x^2 = -1$ in $\R$ nicht lösbar.
+		\end{itemize}
+
+		\subsubsection{Komplexe Zahlen}
+		\begin{itemize}
+			\item $\C = \left\lbrace z = x + iy:\; x,\;y \in \R \right\rbrace$
+			\ $i$ heißt imaginäre Einheit, es gilt $\R \subset \C$.
+		\end{itemize}
+	
+	\subsection{Algebraische Strukturen}
+		\subsubsection{Gruppe}
+		\begin{definition} 
+		  \glqq Eine Menge $M$ mit der Verknüpfung $+:M\times M \rightarrow M$, deren Elemente die Eigenschaften $(G1) - (G3)$ erfüllen, heißt Gruppe. Gilt zusätzlich $(G4)$, so heißt $(M,+)$ eine kommutative Gruppe.\grqq \cite{HM12}
+		In der Literatur findet man als alternative Bezeichnung kommutativ auch abelsch. \citeVgl{LinAF}
+		\end{definition}
+		
+			\subsubsubsection{Gruppenaxiome}
+		  \begin{equation}
+			  \begin{tabularx}{14.7cm}{l l l}
+					(\textbf{G1}) & $x+(y+z) = (x+y)+z$ & \colBlue{(Assoziativgesetz)}\\
+					(\textbf{G2}) & $x+0 = x = 0+x$ & \colBlue{(0 ist das neutrale Element)}\\
+					(\textbf{G3}) & $x+(-x) = (-x)+x = 0$ & \colBlue{(-x ist das inverse Element zu x)}\\
+					(\textbf{G4}) & $x+y = y+x$ & \colBlue{(Kommutativität also Vertauschbarkeit)}\\
+			  \end{tabularx}
+			  \label{ax:groupaxioms}
+			\end{equation}
+			
+			\begin{definition} 
+			  \glqq Sei eine Gruppe eine Verknüpfung mit $\cdot$ und $G' \subset G$ eine nichtleere Teilmenge. $G'$ heißt eine Untergruppe, wenn für $a,\;b \in G'$ auch $a\cdot b \in G'$ und $a^{-1} \in G'$. \cite{LinAF}
+			  \newline
+			  Im Bezug auf Gruppen und Ringe spielen die Begrifflichkeiten Isomorphismus und Homomorphismus eine Rolle. Beide Begriffe leiten sich von Morphismus (Struktur bzw. Form), Homo (gleich im Sinne von ähnlich) und Iso (gleich im Sinne von identisch) ab. 
+		  \end{definition}
+		  
+			\begin{definition} 
+			  \glqq Sind $G$ und $H$ Gruppen mit Verknüpfungen $\cdot$ und $\times$, so heißt eine Abbildung $\varphi : G \rightarrow H$ Homomorphismus (von Gruppen), wenn
+			\end{definition}
+			
+			\begin{equation}
+			  \varphi (a \cdot b) = \varphi (a) \times \varphi (b) \qquad  \forall a,\;b \in G\text{. \cite{LinAF}}
+			\end{equation}
+			\newline
+			Ein Homomorphismus heißt Isomorphismus wenn er bijektiv ist. \cite{LinAF}
+		
+		  \subsubsection{Ring}
+		  \begin{definition}
+		    Erfüllt eine Menge die Eigenschaften einer Gruppe, hat jedoch zwei Verknüpfungen (z.B. $(+,-)$) spricht man von einem Ring.
+		\end{definition}
+		
+		  \subsubsection{Körper}
+		  \begin{definition}
+		    Erfüllt eine Menge die Eigenschaften eines Ringes und ist zusätzlich kommutativ spricht man von einem Körper. Ein Beispiel für einen Körper ist die algebraische Struktur der rationalen und reellen Zahlen. 
+		  \end{definition}
+		
+	    \subsubsubsection{Körperaxiome}
+		  \begin{equation}
+				\begin{tabularx}{14.7cm}{l l l}
+					(\textbf{K1}) & $x\cdot(y\cdot z) = (x\cdot y)\cdot z$ & \colBlue{(Assoziativgesetz)}\\
+					(\textbf{K2}) & $x\cdot 1 = 1 \cdot x = x$ & \colBlue{(1 ist das neutrale Element)}\\
+					(\textbf{K3}) & $x\cdot(\frac{1}{x}) = (\frac{1}{x}) \cdot x = 1$ & \colBlue{($\frac{1}{x}$ ist das inverse Element zu x)}\\
+					(\textbf{K4}) & $x\cdot y = y\cdot x$ & \colBlue{(Kommutativität also Vertauschbarkeit)} \\
+					(\textbf{D}) & $x \cdot (y+z) = x \cdot y + x \cdot z$ & \colBlue{(Kommutativität also Vertauschbarkeit)}\\
+				\end{tabularx}
+		    \label{ax:körperaxiome}
+		  \end{equation}
+		  \newline
+		
+      \begin{definition} 
+        \glqq Eine Menge $M$ mit den Verknüpfungen $+:M\times M  \rightarrow M$ und $\cdot: M\times M \rightarrow M$, deren Elemente die Gesetze $(G1) - (G4)$, $(M1) - M4)$ und $(D)$ erfüllt, heißt Körper.\grqq \cite{HM12}
+      \end{definition}
+		
+	\subsection{Komplexe Zahlen}
+	\begin{align}
+		\C = \{ z &= x + iy:\; x,\;y \in \R \}\\
+		i^2 &= 1
+	\end{align}
+	Den Realteil einer komplexen Zahl $z$ bezeichnet man i.A. mit $x$, den Imaginärteil mit $y$.
+	\begin{equation}
+	  Re\{z\} = x \qquad Im\{z\} = y
+	\end{equation}
+	
+	\begin{definition} 
+	  \glqq Zwei komplexe Zahlen sind gleich, wenn ihre Real- und Imaginärteile gleich sind. \grqq \cite{HM12}
+	\end{definition}
+	
+		\subsubsection{Betrag der komplexen Zahl}
+		Da sich komplexe Zahlen geometrisch im $\R^2$ interpretieren lassen, kann aus beiden Teilen ein Betragspfeil gebildet werden.
+		\begin{equation}
+		  |z| = \sqrt{x^2 + y^2}
+		\end{equation}
+		
+		\subsubsubsection{Eigenschaften}
+  	\begin{align}
+		  |z| &= 0\\
+			|z| = 0 &\Leftrightarrow z = 0\\
+			|z_1 \cdot z_2| &= |z_1| |z_2|\\
+			|z_1 + z_2| &\leq |z_1| + |z_2| \quad \text{\colBlue{(Dreiecksungleichung)}}
+		\end{align}
+		
+		\subsubsection{Komplex konjugierte Zahl}
+		\begin{definition} 
+		  \glqq $\overline{z} = x -iy$ heißt die zu $z = x + iy$ konjugiert komplexe Zahl. \grqq \cite{HM12}
+		\end{definition}
+		
+		\subsubsubsection{Eigenschaften}
+		\begin{align}
+			\overline{\overline{z}} &= z \\
+			\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2},&\qquad \overline{z_1 \cdot z_2} = \overline{z_1} \cdot \overline{z_2} \\
+			Re\{z\} = \frac{1}{2} /z + \overline{z}), &\qquad Im\{z\} = \frac{1}{2i} /z - \overline{z})\\
+			|z| = \sqrt{z \overline{z}}, &\qquad z\overline{z} = x^2 + y^2
+		\end{align}
+			
+		\subsubsection{Polarkoordinatendarstellung}
+		\begin{align}
+			z = x + iy &= |z|(cos\varphi + isin\varphi)\\
+			\Rightarrow x = |z| cos\varphi, &\qquad \rightarrow y = |z| sin\varphi) \nonumber\\
+			\Rightarrow tan \varphi &= \frac{sin \varphi}{cos \varphi} = \frac{x}{y}
+		\end{align}
+		
+		Achtung. Die Umkehrfunktion von Tanges ist nicht eindeutig. Es gilt:
+		
+		\begin{align}
+		\varphi = 
+		\begin{cases} 
+		    arctan(\frac{x}{y}) \qquad &,\; x > 0,\; y\geq 0\\
+		    \frac{\pi}{2}  &,\;x = 0,\; y > 0\\
+		    \pi + arctan(\frac{y}{x}) &,\; x < 0\\
+		    \frac{3\pi}{2} &,\; x=0,\;y< 0\\
+		    2\pi + arctan(\frac{y}{x}) &,\; x> 0,\; y < 0
+		\end{cases}
+		\end{align}
+	
+	  \subsubsection{Multiplikation}
+	  \begin{align}
+	  z_1 \cdot z_2 &\;\; = |z_1|(cos\varphi_1 + isin\varphi_1) \cdot |z_2| (cos\varphi_2 + isin\varphi_2)\\
+	  &\overset{\eqref{eq:trigo_addtheo}}{=} |z_1| |z_2| (cos(\varphi_1 + \varphi_2) + isin(\varphi_1 + \varphi_2))\\
+	  &\;\; \Rightarrow |z_1 \cdot z_2| = |z_1| |z_2| \qquad ,\; Winkel = \varphi_1 + \varphi_2 \label{eq:zahl_kompl_mult}
+	  \end{align}
+	  
+	  \subsubsection{Formel von de Moivre}
+	  Setzt man in \eqref{eq:zahl_kompl_mult} $z_1 = z_2 = z$ ein erhält man die Formel von de Moivre.
+	  \begin{align}
+	    z \cdot z &= z^2 = |z|^2 (cos(2\varphi) + isin(2\varphi)) &,\; bzw.&&\nonumber\\
+	    z^n &= |z|^n(cos(n\varphi)  + isin(n \varphi)) &,\; bzw.&&\nonumber\\
+	    z^n& = |z|^n(cos\varphi + isin\varphi)^n\nonumber\\
+	    &\Rightarrow (cos\varphi + isin\varphi)^n = cos(n\varphi) + isin(n\varphi)
+	  \end{align}
+	
+	  Mit der Eulerschen Formel erhält man $e^{i\varphi} := cos\varphi + isin\varphi$. Daraus folgt:
+	  \begin{align}
+	  (e^{i\varphi})^n &= e^{in\varphi} \\
+	  e^{i(\varphi_1 + \varphi_2} &= e^{i\varphi_1} e^{i\varphi_2}\\
+	  e^{-i\varphi} &= \frac{1}{e^{i\varphi}}\\
+	  z_x = |z_x|e^{i\varphi_x} &\Rightarrow z_1 z_2 = |z_1| |z_2| e^{i(\varphi_1 + \varphi_2)}
+	  \end{align}
+
+  \subsection{Polynome}
+  Ein komplexes Polynom hat die Form
+  \begin{align}
+    p(z) = \sum_{k=0}^n a_k z^k = a_n z^n + a_{n-1} z^{n-1} + ... + a_0 \\
+    a_k \in \C \nonumber
+  \end{align}
+  Falls $a_n \neq 0$ gibt $n$ den Grad des Polynoms an.
+  \newline
+  \begin{definition} 
+    \glqq Ist $p(z)$ ein reelles Polynom, d.h. $a_k \in \R$, dann ist mit $z\in \C$ auch 
+  $\overline{z} \in \C$ eine Nullstelle, d.h. aus $p(z) = 0$ folgt $p(\overline{z}) = 0$, d.h. die
+  Nullstellen sind konjugiert komplex zueinander. \grqq \cite{HM12}
+  \end{definition}
+
+	\subsubsection{Fundamentalsatz der Algebra}
+	\begin{satz}
+	  Jedes Polynom vom Grad $\geq$ 1 besitzt in $\C$ mindestens eine Nullstelle.     
+	  \label{satz:fund_alg}
+	\end{satz}
+	  
+  \subsubsection{Polynomdivision}
+    Über Polynomdivision lassen sich Polynome in Linearfaktoren zerlege. 
+    \begin{align}
+      Bsp.:  \nonumber\\
+      (2z^3 - 3z^2 -6z +6) : (z-2) = (2z^2 +z -4)\quad ,\text{ Rest: } -2 \nonumber\\
+      \underset{\text{\rule{3cm}{0.4pt}}}{-(2z^3 - 4z^2)} \nonumber \\
+      0 + z^2 - 6z + 6 \nonumber \\
+      \qquad \underset{\text{\rule[5mm]{3cm}{0.4pt}}}{z^2-2z} \nonumber \\
+    \end{align}
+    
+    Aus \ref{satz:fund_alg} folgt:
+    \begin{satz}
+      Jedes Polynom p vom Grad $n\geq 1$ lässt sich über $\C$ in Linearfaktoren zerlegen, d.h. es gibt Zahlen $z_K$, die Nullstellen von p sind, sodass
+      \begin{align*}
+        p(z) = a_n(z-z_1)(z-z_2).../z-z_n)
+      \end{align*}
+    \end{satz}
+    
+    \begin{satz} $\;$
+      \begin{itemize}
+        \item[a)]
+          Besitzt ein Polynom p vom n-ten Grad n+1 Nullstellen, so ist p = 0
+        \item[b)]
+          Stimmen zwei Polynome p und q jeweils vom Grad n an n+1 Stellen überein, so ist p = q.
+      \end{itemize}
+    \end{satz}
+    
+  \subsection{Einheitswurzeln}
+  Wurzeln der Form $z^n = 1$ können allgemein einfach bestimmt werden. Mit $|z^n| = |z|^n = 1$ folgt $|z| = 1$. Mit der eulerschen Identität folgt aus
+  \begin{align*}
+    z &= e^{i\varphi} = cos \varphi + i \; sin\varphi = 1 = 1 + 0 \cdot i\\
+    &\Rightarrow n\varphi = 2 \pi k \quad ,k \in \Z\\
+    &\Rightarrow \varphi = \frac{2\pi k}{n}\\
+    &\Rightarrow z_0 = 1 e^{i\cdot 0},\quad z_1 = e^{i\frac{2\pi}{n}}, \quad ... z_n = e^{i\frac{k\pi}{n}}
+  \end{align*}    
+  Allgemein gilt mit $z^n = a$ und $\varphi = arccos\left(\frac{|z|}{Re\{z\}}\right)$:
+  \begin{align}
+    z_k = a^{\frac{1}{n}} \cdot \left(cos\left(\frac{\varphi + 2k\pi}{n}\right) + i\cdot sin\left(\frac{\varphi + 2k\pi}{n}\right)\right)
+  \end{align}
+  Bei reellen Polynomen sind dabei die Nullstellen komplex konjugiert zueinander.
+  \newpage
+  
