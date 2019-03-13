@@ -21,3 +21,20 @@
 \def\ul#1{\underline{#1}}
 \def\€{\euro{}}
 \def\epsF{\pmb{\varepsilon}}
+
+\newcommand{\leftRightsection}[2]{
+\begin{minipage}[t]{0.5\linewidth}
+	\flushleft
+	\textbf{#1}
+\end{minipage}
+	\hfill
+\begin{minipage}[t]{0.4\linewidth}
+	\flushright
+	\textbf{#2}
+\end{minipage}
+}
+\newcommand{\dottedSection}[2]{
+\begin{minipage}[t]{0.95\linewidth}
+	\textbf{#1 \dotfill #2}
+	\end{minipage}
+}
